@@ -1,0 +1,112 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+#content-top {
+  background-color: #ffffff;
+  padding: 5px;
+  margin: 10x;
+  border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 10px; /* Adjusted margin for regular h2 tags */
+    font-size: 1.5em; /* Reduced font size for regular h2 tags */
+    color: #054488;
+  }
+  
+  h2 a {
+    font-size: 32px; /* Font size for a tags inside h2 tags */
+    color: #007bff;
+    text-decoration: none;
+  }
+
+p {
+  color: #666666;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-primary {
+  background-color: #3498db;
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.warning {
+  background-color: #ffeeba;
+  border: 1px solid #ffc107;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+/* Add your custom styles for rating-element here */
+rating-element {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+rating-element button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+rating-element button.thumb_down svg,
+rating-element button.thumb_up svg {
+  fill: #555555;
+  height: 24px;
+  width: 24px;
+}
+
+rating-element .rating {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin: 10px;
+}
+
+/* Code block styling */
+pre {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: "Courier New", monospace;
+}

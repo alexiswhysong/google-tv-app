@@ -1,0 +1,319 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Eczar&family=Outfit:wght@100;300;500;600;700&family=Poppins:ital,wght@0,100;0,300;400;0,500;1,100&family=Roboto&display=swap');
+
+/* *{
+  font-family: 'Poppins', sans-serif;
+} */
+.navbar {
+    font-weight: 300;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+      rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+  }
+
+  .overlay{
+    position: fixed;
+    display: block;
+    width: 40%;
+    height: 100%;
+    right:-1000px;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+    transition: right 0.5s ease;
+  }
+
+  .mobile-navbar{
+    
+    display: block;
+    transition: left 0.5s ease;
+  }
+
+  .navbar-left{
+    /* background-color: #4caf50; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    /* width: 150px; */
+  }
+
+  #menu-icon{
+    display: none;
+    font-size: 30px;
+    color: gray;
+  }
+
+  sl-button#each-topic::part(base){
+    padding: 5px 2px;
+    margin-top: 10px;
+    padding-left: 10px;
+    width: 100%;
+    justify-content: left;
+    color:#80868B;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+  }
+
+  sl-button#each-topic.active::part(base) {
+    color: #212121;
+    font-weight: bold;
+  }
+
+  .navbar h3{
+    font-family: 'Outfit', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    color: #3C4043;
+  }
+
+  .navbar > .timer,
+  p {
+    margin: 10px;
+  }
+
+  .spinner-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    height: 100vh;
+    justify-content: space-around;
+  }
+
+  #topics {
+    width: 20%;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 20%;
+    margin: 10px;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /* #each-topic {
+    margin-top: 10px;
+    width: 100%;
+  } */
+
+
+  #content-scroller {
+    justify-content: right;
+    position: fixed;
+    bottom: 0;
+    overflow-y: auto;
+    top: 10%;
+    left: 35%;
+    margin: 20px;
+    width: 50%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  }
+
+
+
+  #content-top p {
+    min-height: 50px; /* Set a minimum height for the description */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the minimum height */
+  }
+
+  #content-top {
+    padding: 10px;
+  }
+
+  #timer {
+    /* background-color: aqua; */
+    width: 300px;
+    font-weight:500;
+    font-family: 'Roboto', sans-serif;
+    color: #3C4043;
+    /* opacity: 0.7; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #content-bottom {
+    width: 65%;
+    margin: 0 auto;
+    position: fixed;
+    left: 28%;
+    bottom: 50;
+  }
+
+  #nav-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 7px;
+    background-color: #4caf50;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+
+  /* Responsive CSS */
+
+  @media only screen and (max-width: 1024px){
+    #topics{
+      display: none;
+    }
+
+    .container {
+      margin-top: 50px;
+      height: 100vh;
+      /* justify-content: space-around; */
+    }
+
+    #content {
+       justify-content: center;
+      position: fixed; 
+      left: 5%;
+      margin: 12px auto;
+      width: 90%;
+      background-color: #ffffff;
+    }
+
+    #content-scroller {
+      justify-content: center;
+      position: fixed; 
+      left: 5%;
+      margin: 12px auto;
+      width: 90%;
+      background-color: #ffffff;
+    }
+
+    #content-bottom {
+      /* background-color: blue; */
+      width: 100%;
+      margin: 0 auto;
+      position: fixed;
+      left: 0;
+      bottom: 50;
+    }
+
+    .mobile-navbar > #timer {
+      font-weight: 500;
+      color: #3C4043;
+      display: flex;
+      width: 100%;
+      padding-left: 25px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px !important;
+    }
+
+    #nav-btns {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+    }
+    #menu-icon{
+      display: block;
+    }
+
+    .mobile-navbar{
+      display: block;
+      position: fixed;
+      left: -1000;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 60%;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      background-color: white;
+      z-index: 2;
+    }
+
+    /* .mobile-navbar > #timer{
+     
+      display: flex;
+      justify-content:left;
+      align-items: center;
+      font-size: 12px;
+      font-weight: medium;
+      margin: 10px;
+    } */
+
+    .mobile-navbar > p{
+      font-size: 15px;
+      font-weight:500;
+      text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+    }
+
+    .mobile-navbar > #topics{
+      display: flex;
+       width: 55%;
+       justify-content: space-between;
+       /* margin: auto auto; */
+      top:10%; 
+    }
+
+   
+
+    sl-button#each-topic::part(base){
+      margin-top: 20px;
+      padding: 5px 2px;
+      padding-left: 5px;
+      font-size: 10px;
+      /* width: 200px; */
+      width: 100%;
+      justify-content: left;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      
+    }
+
+    
+
+    
+    /*Tablets [601px -> 1200px]*/
+}
+
+@media only screen and (max-width: 630px){
+  #timer {
+    display: none;
+  }
+
+  .mobile-navbar > .mobile-timer{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight:500;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+  }
+
+  .navbar h3{
+        font-size: 15px;
+  }
+}

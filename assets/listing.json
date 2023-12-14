@@ -1,0 +1,200 @@
+{
+  "status": 200,
+  "data": {
+    "id": "web-development-tutorial",
+    "title": "From Web Component to Lit Element",
+    "author": "Your Name",
+    "description": "A comprehensive tutorial on web development with Lit Element for beginners.",
+    "license": "by-sa",
+    "metadata": {},
+    "items": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "description": "Explore the fundamentals of web development and programming languages.",
+        "video": "https://www.youtube.com/watch?v=sJlE8C4JE8Y",
+        "webComponentsDescription": "Web Components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. Custom components and widgets built on the Web Component standards will work across modern browsers and can be used with any JavaScript library or framework that works with HTML.",
+        "litDescription": "Lit is a simple library for building fast, lightweight web components that work in any framework, or with no framework at all. With Lit, you can build shareable components, applications, design systems, and more. Lit provides APIs to simplify common Web Components tasks like managing properties, attributes, and rendering.",
+        "whatYoullLearn": [
+          "What is a Web Component",
+          "The concepts of Web Components",
+          "How to build a Web Component",
+          "What are lit-html and LitElement",
+          "What Lit does on top of a web component"
+        ],
+        "whatYoullBuild": [
+          "A vanilla thumbs up / down Web Component",
+          "A thumbs up / down Lit-based Web Component"
+        ],
+        "whatYoullNeed": [
+          "Any updated modern browser (Chrome, Safari, Firefox, Chromium Edge). Web Components work in all modern browsers and polyfills are available for Microsoft Internet Explorer 11 and non-chromium Microsoft Edge.",
+          "Knowledge of HTML, CSS, JavaScript, and Chrome DevTools."
+        ]
+      },
+      {
+        "id": "getting-set-up-exploring-the-playground",
+        "title": "Getting set up & exploring the Playground",
+        "description": "Learn the basics of HTML and CSS to create the structure and style of web pages.",
+        "video": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "whatYoullLearn": [
+          "HTML and CSS basics",
+          "How to structure web pages",
+          "Introduction to browser DevTools"
+        ],
+        "whatYoullBuild": [
+          "A simple webpage with HTML and CSS"
+        ],
+        "whatYoullNeed": [
+          "Text editor (e.g., Visual Studio Code)",
+          "Basic understanding of programming concepts"
+        ]
+      },
+      {
+        "id": "define-a-custom-element",
+        "title": "Define A Custom Element",
+        "description": "Understand the fundamentals of JavaScript for adding interactivity to websites.",
+        "video": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+        "whatYoullLearn": [
+          "JavaScript basics",
+          "Creating and manipulating DOM elements",
+          "Event handling"
+        ],
+        "whatYoullBuild": [
+          "A simple interactive webpage using JavaScript"
+        ],
+        "whatYoullNeed": [
+          "Understanding of HTML and CSS",
+          "Basic knowledge of programming concepts"
+        ]
+      },
+      {
+        "id": "shadow-dom",
+        "title": "Shadow DOM",
+        "description": "Learn how to create responsive and mobile-friendly web designs.",
+        "video": "https://www.youtube.com/watch?v=4clvG-_mXFs",
+        "whatYoullLearn": [
+          "Responsive design principles",
+          "Introduction to the Shadow DOM",
+          "Mobile-first development"
+        ],
+        "whatYoullBuild": [
+          "A responsive webpage with Shadow DOM"
+        ],
+        "whatYoullNeed": [
+          "Knowledge of HTML and CSS",
+          "Understanding of JavaScript"
+        ]
+      },
+      {
+        "id": "html-templates",
+        "title": "HTML Templates",
+        "description": "Explore popular web frameworks like React, Angular, and Vue.js.",
+        "video": "https://www.youtube.com/watch?v=3qJ1ZlE2YDE",
+        "whatYoullLearn": [
+          "Overview of popular web frameworks",
+          "Using HTML templates in frameworks",
+          "Comparisons between React, Angular, and Vue.js"
+        ],
+        "whatYoullBuild": [
+          "A simple project using a chosen framework"
+        ],
+        "whatYoullNeed": [
+          "Familiarity with JavaScript frameworks",
+          "Basic understanding of HTML and CSS"
+        ]
+      },
+      {
+        "id": "adding-functionality",
+        "title": "Adding Functionality",
+        "description": "Understand the basics of server-side development and databases.",
+        "video": "https://www.youtube.com/watch?v=0oSqJnOeS5U",
+        "whatYoullLearn": [
+          "Introduction to server-side development",
+          "Working with databases",
+          "Creating a simple backend"
+        ],
+        "whatYoullBuild": [
+          "A basic server-side functionality for a web app"
+        ],
+        "whatYoullNeed": [
+          "Understanding of web development concepts",
+          "Knowledge of JavaScript"
+        ]
+      },
+      {
+        "id": "lit-html",
+        "title": "Lit-html",
+        "description": "Learn different strategies for deploying web applications.",
+        "video": "https://www.youtube.com/watch?v=bpKI3R0nf7E",
+        "whatYoullLearn": [
+          "Various deployment strategies",
+          "Optimizing web applications for performance",
+          "Introduction to lit-html"
+        ],
+        "whatYoullBuild": [
+          "Deploy a sample web application",
+          "Implement lit-html in a project"
+        ],
+        "whatYoullNeed": [
+          "Completed previous tutorials in the series",
+          "Understanding of web deployment concepts"
+        ]
+      },
+      {
+        "id": "litelement",
+        "title": "LitElement",
+        "description": "Learn version control using Git for tracking changes in your projects.",
+        "video": "https://www.youtube.com/watch?v=SWYqp7iY_Tc",
+        "whatYoullLearn": [
+          "Introduction to version control with Git",
+          "Branching and merging",
+          "Collaborative development using Git"
+        ],
+        "whatYoullBuild": [
+          "Create a Git repository for your project",
+          "Collaborate with others using Git"
+        ],
+        "whatYoullNeed": [
+          "Installed Git on your machine",
+          "Basic understanding of the command line"
+        ]
+      },
+      {
+        "id": "seo-basics",
+        "title": "Children",
+        "description": "Understand the fundamentals of Search Engine Optimization (SEO) for websites.",
+        "video": "https://www.youtube.com/watch?v=JxE5HhX5R4U",
+        "whatYoullLearn": [
+          "SEO principles for web development",
+          "Optimizing content for search engines",
+          "Improving website visibility"
+        ],
+        "whatYoullBuild": [
+          "Optimize a sample website for SEO"
+        ],
+        "whatYoullNeed": [
+          "Understanding of web development concepts",
+          "Knowledge of HTML and CSS"
+        ]
+      },
+      {
+        "id": "congratulations",
+        "title": "Congratulations",
+        "description": "Learn about the importance of web accessibility and how to implement it in your projects.",
+        "video": "https://www.youtube.com/watch?v=LKx3Wg9aAbA",
+        "whatYoullLearn": [
+          "Importance of web accessibility",
+          "Implementing accessibility features",
+          "Testing for accessibility"
+        ],
+        "whatYoullBuild": [
+          "Make your web projects more accessible"
+        ],
+        "whatYoullNeed": [
+          "Understanding of HTML and CSS",
+          "Desire to create inclusive web experiences"
+        ]
+      }
+    ]
+  }
+}
