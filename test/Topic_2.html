@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/tutorialPage.css">
+    <title>Topic 2</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title">
+          <a href="#1">2. Getting set up &amp; exploring the Playground</a>
+        </h2>
+
+        <h2
+          is-upgraded=""
+          id="accessing-the-code"
+          data-text="Accessing the code"
+        >
+          Accessing the code
+        </h2>
+        <p>
+          Throughout the codelab there will be links to the Lit playground like
+          this:
+        </p>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3siY29udGVudCI6IjwhZG9jdHlwZSBodG1sPlxuPGhlYWQ-XG48L2hlYWQ-XG48Ym9keT5cbiAgPGRpdj5IZWxsbyBXb3JsZCE8L2Rpdj5cbjwvYm9keT5cbiIsIm5hbWUiOiJpbmRleC5odG1sIn1d"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <p>
+          The playground is a code sandbox that runs completely in your browser.
+          It can compile and run TypeScript and JavaScript files, and it can
+          also automatically resolve imports to node modules. e.g.
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-ts" dir="ltr"><span class="com"><span class="com">// before</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">import</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'./my-file.js'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">import</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'lit'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="com"><span class="com">// after</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">import</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'./my-file.js'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">import</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'https://unpkg.com/lit?module'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          You can do the entire tutorial in the Lit playground, using these
+          checkpoints as starting points. If you're using VS Code, you can use
+          these checkpoints to download the starting code for any step, as well
+          as using them to check your work.
+        </p>
+        <h2
+          is-upgraded=""
+          id="exploring-the-lit-playground-ui"
+          data-text="Exploring the lit playground UI"
+        >
+          Exploring the lit playground UI
+        </h2>
+        <p class="image-container">
+          <img
+            alt="The file selector tab bar is labeled Section 1, The code editing section asSection 2, the output preview as Section 3, and the preview reload button asSection 4"
+            src="/static/codelabs/the-lit-path/img/playground.png"
+            srcset="
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_36.png     36w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_48.png     48w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_72.png     72w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_96.png     96w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_480.png   480w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_720.png   720w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_856.png   856w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_960.png   960w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_1440.png 1440w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_1920.png 1920w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/playground_2880.png 2880w
+            "
+            sizes="(max-width: 840px) 100vw, 856px"
+          />
+        </p>
+        <p>
+          The Lit playground UI screenshot highlights sections that you'll use
+          in this codelab.
+        </p>
+        <ol type="1">
+          <li>File selector. Note the plus button...</li>
+          <li>File editor.</li>
+          <li>Code preview.</li>
+          <li>Reload button.</li>
+          <li>Download button.</li>
+        </ol>
+        <aside class="special">
+          <p>
+            You can also use
+            <code translate="no" dir="ltr">ctrl + s</code> (<code
+              translate="no"
+              dir="ltr"
+              >cmd + s</code
+            >
+            for Mac) to save your progress as a URL. This will allow you to
+            reload the page and not lose your progress or share your code with
+            others.
+          </p>
+        </aside>
+        <h2
+          is-upgraded=""
+          id="vs-code-setup-advanced"
+          data-text="VS Code setup (Advanced)"
+        >
+          VS Code setup (Advanced)
+        </h2>
+        <aside class="warning">
+          <p>
+            If you intend to run this codelab entirely in the browser, you can
+            skip this step.
+          </p>
+        </aside>
+        <p>Here are the benefits to using this VS Code setup:</p>
+        <ul>
+          <li>Template type checking</li>
+          <li>Template intellisense &amp; autocompletion</li>
+        </ul>
+        <p>
+          If you have NPM, VS Code (with the
+          <a
+            href="https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin"
+            target="_blank"
+            >lit-plugin</a
+          >
+          plugin) installed already and know how to use that environment, you
+          may simply download and start these projects by doing the following:
+        </p>
+        <ul>
+          <li>Press the download button</li>
+          <li>Extract the tar file's contents into a directory</li>
+          <li>
+            Install a dev server that can resolve bare module specifiers (the
+            Lit team recommends
+            <a
+              href="https://www.npmjs.com/package/@web/dev-server"
+              target="_blank"
+              >@web/dev-server</a
+            >)
+            <ul>
+              <li>
+                Here is an example
+                <a
+                  href="https://gist.github.com/e111077/c9d4512dcc35f483abbebf95da24609b"
+                  target="_blank"
+                  ><code translate="no" dir="ltr">package.json</code></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            Run the dev server and open your browser (if you are using
+            <code translate="no" dir="ltr">@web/dev-server</code> you can use
+            <code translate="no" dir="ltr"
+              >npx web-dev-server --node-resolve --watch --open</code
+            >)
+            <ul>
+              <li>
+                If you are using the example
+                <code translate="no" dir="ltr">package.json</code> use
+                <code translate="no" dir="ltr">npm run serve</code>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

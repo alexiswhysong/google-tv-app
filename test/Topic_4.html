@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/tutorialPage.css">
+    <title>Topic 4</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title">
+          <a href="#3">4. Shadow DOM</a>
+        </h2>
+
+        <h2 is-upgraded="" id="why-shadow-dom" data-text="Why Shadow DOM?">
+          Why Shadow DOM?
+        </h2>
+        <p>
+          In the previous step, you'll notice that the selectors in the style
+          tag that you inserted select any rating element on the page as well as
+          any button. This may result in the styles leaking out of the element
+          and selecting other nodes that you may not intend to style.
+          Additionally, other styles outside of this custom element may
+          unintentionally style the nodes inside your custom element. For
+          example, try putting a style tag in the head of the main document:
+        </p>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiAgPGhlYWQ-XG4gICAgPHNjcmlwdCBzcmM9XCIuL2luZGV4LmpzXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuICA8L2hlYWQ-XG4gIDxib2R5PlxuICAgIDxyYXRpbmctZWxlbWVudD48L3JhdGluZy1lbGVtZW50PlxuICA8L2JvZHk-XG48L2h0bWw-In0seyJuYW1lIjoiaW5kZXguanMiLCJjb250ZW50IjoiY2xhc3MgUmF0aW5nRWxlbWVudCBleHRlbmRzIEhUTUxFbGVtZW50IHtcbiBjb25zdHJ1Y3RvcigpIHtcbiAgIHN1cGVyKCk7XG4gICB0aGlzLnJhdGluZyA9IDA7XG4gfVxuIGNvbm5lY3RlZENhbGxiYWNrKCkge1xuICAgdGhpcy5pbm5lckhUTUwgPSBgXG4gICAgIDxzdHlsZT5cbiAgICAgICByYXRpbmctZWxlbWVudCB7XG4gICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgfVxuICAgICAgIHJhdGluZy1lbGVtZW50IGJ1dHRvbiB7XG4gICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICB9XG4gICAgIDwvc3R5bGU-XG4gICAgIDxidXR0b24gY2xhc3M9XCJ0aHVtYl9kb3duXCIgPlxuICAgICAgIDxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTE1IDNINmMtLjgzIDAtMS41NC41LTEuODQgMS4yMmwtMy4wMiA3LjA1Yy0uMDkuMjMtLjE0LjQ3LS4xNC43M3YyYzAgMS4xLjkgMiAyIDJoNi4zMWwtLjk1IDQuNTctLjAzLjMyYzAgLjQxLjE3Ljc5LjQ0IDEuMDZMOS44MyAyM2w2LjU5LTYuNTljLjM2LS4zNi41OC0uODYuNTgtMS40MVY1YzAtMS4xLS45LTItMi0yem00IDB2MTJoNFYzaC00elwiLz48L3N2Zz5cbiAgICAgPC9idXR0b24-XG4gICAgIDxzcGFuIGNsYXNzPVwicmF0aW5nXCI-JHt0aGlzLnJhdGluZ308L3NwYW4-XG4gICAgIDxidXR0b24gY2xhc3M9XCJ0aHVtYl91cFwiPlxuICAgICAgIDxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTEgMjFoNFY5SDF2MTJ6bTIyLTExYzAtMS4xLS45LTItMi0yaC02LjMxbC45NS00LjU3LjAzLS4zMmMwLS40MS0uMTctLjc5LS40NC0xLjA2TDE0LjE3IDEgNy41OSA3LjU5QzcuMjIgNy45NSA3IDguNDUgNyA5djEwYzAgMS4xLjkgMiAyIDJoOWMuODMgMCAxLjU0LS41IDEuODQtMS4yMmwzLjAyLTcuMDVjLjA5LS4yMy4xNC0uNDcuMTQtLjczdi0yelwiLz48L3N2Zz5cbiAgICAgPC9idXR0b24-XG4gICBgO1xuIH1cbn1cblxuY3VzdG9tRWxlbWVudHMuZGVmaW5lKCdyYXRpbmctZWxlbWVudCcsIFJhdGluZ0VsZW1lbnQpOyJ9LHsibmFtZSI6InRodW1iX2Rvd24uc3ZnIiwiY29udGVudCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTE1IDNINmMtLjgzIDAtMS41NC41LTEuODQgMS4yMmwtMy4wMiA3LjA1Yy0uMDkuMjMtLjE0LjQ3LS4xNC43M3YyYzAgMS4xLjkgMiAyIDJoNi4zMWwtLjk1IDQuNTctLjAzLjMyYzAgLjQxLjE3Ljc5LjQ0IDEuMDZMOS44MyAyM2w2LjU5LTYuNTljLjM2LS4zNi41OC0uODYuNTgtMS40MVY1YzAtMS4xLS45LTItMi0yem00IDB2MTJoNFYzaC00elwiLz48L3N2Zz4ifSx7Im5hbWUiOiJ0aHVtYl91cC5zdmciLCJjb250ZW50IjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgaGVpZ2h0PVwiMjRcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgd2lkdGg9XCIyNFwiPjxwYXRoIGQ9XCJNMSAyMWg0VjlIMXYxMnptMjItMTFjMC0xLjEtLjktMi0yLTJoLTYuMzFsLjk1LTQuNTcuMDMtLjMyYzAtLjQxLS4xNy0uNzktLjQ0LTEuMDZMMTQuMTcgMSA3LjU5IDcuNTlDNy4yMiA3Ljk1IDcgOC40NSA3IDl2MTBjMCAxLjEuOSAyIDIgMmg5Yy44MyAwIDEuNTQtLjUgMS44NC0xLjIybDMuMDItNy4wNWMuMDktLjIzLjE0LS40Ny4xNC0uNzN2LTJ6XCIvPjwvc3ZnPiJ9XQ"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <h3 is-upgraded="" id="index.html_1" data-text="index.html">
+          index.<wbr />html
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-html" dir="ltr"><span class="dec"><span class="dec">&lt;!DOCTYPE html&gt;</span></span><span class="pln"><span class="pln"><br></span></span><span class="tag"><span class="tag">&lt;html&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;head&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;script</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">src</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"./index.js"</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">type</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"module"</span></span><span class="tag"><span class="tag">&gt;&lt;/script&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;style&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;span </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">border</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1px</span></span><span class="pln"><span class="pln"> solid red</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;/style&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;/head&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;body&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;rating-element&gt;&lt;/rating-element&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;/body&gt;</span></span><span class="pln"><span class="pln"><br></span></span><span class="tag"><span class="tag">&lt;/html&gt;</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Your output should have a red border box around the span for the
+          rating. This is a trivial case, but the lack of DOM encapsulation may
+          result in larger problems for more complex applications. This is where
+          Shadow DOM comes in.
+        </p>
+        <h2
+          is-upgraded=""
+          id="attaching-a-shadow-root"
+          data-text="Attaching a Shadow Root"
+        >
+          <strong>Attaching a Shadow Root</strong>
+        </h2>
+        <p>
+          Attach a Shadow Root to the element and render the DOM inside of that
+          root:
+        </p>
+        <h3 is-upgraded="" id="index.js_2" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">HTMLElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;constructor</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">super</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp;connectedCallback</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> shadowRoot </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">attachShadow</span></span><span class="pun"><span class="pun">({</span></span><span class="pln"><span class="pln">mode</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'open'</span></span><span class="pun"><span class="pun">});</span></span><span class="pln"><span class="pln"><br><br>&nbsp; &nbsp;shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">innerHTML </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">`<br>&nbsp; &nbsp; &nbsp;&lt;style&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;:host {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;display: inline-flex;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;align-items: center;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;button {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;background: transparent;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;border: none;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cursor: pointer;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp;&lt;/style&gt;<br>&nbsp; &nbsp; &nbsp;&lt;button class="thumb_down" &gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"&gt;&lt;path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/&gt;&lt;/svg&gt;<br>&nbsp; &nbsp; &nbsp;&lt;/button&gt;<br>&nbsp; &nbsp; &nbsp;&lt;span class="rating"&gt;${this.rating}&lt;/span&gt;<br>&nbsp; &nbsp; &nbsp;&lt;button class="thumb_up"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"&gt;&lt;path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/&gt;&lt;/svg&gt;<br>&nbsp; &nbsp; &nbsp;&lt;/button&gt;<br>&nbsp; &nbsp;`</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>customElements</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">define</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'rating-element'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          When you refresh the page, you will notice that the styles in the main
+          document can no longer select the nodes inside the Shadow Root.
+        </p>
+        <p>
+          How did you do this? In the
+          <code translate="no" dir="ltr">connectedCallback</code> you called
+          <code translate="no" dir="ltr">this.attachShadow</code> which attaches
+          a shadow root to an element. The
+          <code translate="no" dir="ltr">open</code> mode means that the shadow
+          content is inspectable and makes the shadow root accessible via
+          <code translate="no" dir="ltr">this.shadowRoot</code> as well. Take a
+          look at the Web Component in the Chrome inspector as well:
+        </p>
+        <p class="image-container">
+          <img
+            alt="The dom tree in the chrome inspector. There is a <rating-element> with a#shadow-root (open) as it’s child, and the DOM from before inside that shadowroot."
+            src="img/dom-tree.png"
+            srcset="
+              img/dom-tree_36.png     36w,
+              img/dom-tree_48.png     48w,
+              img/dom-tree_72.png     72w,
+              img/dom-tree_96.png     96w,
+              img/dom-tree_480.png   480w,
+              img/dom-tree_720.png   720w,
+              img/dom-tree_856.png   856w,
+              img/dom-tree_960.png   960w,
+              img/dom-tree_1440.png 1440w,
+              img/dom-tree_1920.png 1920w,
+              img/dom-tree_2880.png 2880w
+            "
+            sizes="(max-width: 840px) 100vw, 856px"
+          />
+        </p>
+        <p>
+          You should now see an expandable shadow root that holds the contents.
+          Everything inside that shadow root is called the Shadow DOM. If you
+          were to select the rating element in Chrome Dev Tools and call
+          <code translate="no" dir="ltr">$0.children</code>, you will notice
+          that it returns no children. This is because Shadow DOM is not
+          considered a part of the same DOM tree as direct children but rather
+          the <em>Shadow Tree</em>.
+        </p>
+        <aside class="special">
+          <p>
+            The Shadow Tree provides CSS and DOM encapsulation by scoping both
+            CSS selectors and
+            <code translate="no" dir="ltr">querySelector</code>s to the local
+            shadow root.
+          </p>
+        </aside>
+        <h2 is-upgraded="" id="light-dom" data-text="Light DOM">Light DOM</h2>
+        <p>
+          An experiment: add a node as a direct child of the
+          <code translate="no" dir="ltr">&lt;rating-element&gt;</code>:
+        </p>
+        <h3 is-upgraded="" id="index.html_2" data-text="index.html">
+          <strong>index.<wbr />html</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-html" dir="ltr"><span class="tag"><span class="tag">&lt;rating-element&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;div&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;This is the light DOM!<br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;/div&gt;</span></span><span class="pln"><span class="pln"><br></span></span><span class="tag"><span class="tag">&lt;/rating-element&gt;</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Refresh the page, and you'll see that this new DOM node in this Custom
+          Element's <em>Light DOM</em> does not show up on the page. This is
+          because Shadow DOM has features to control how Light DOM nodes are
+          projected into the shadow dom via
+          <code translate="no" dir="ltr">&lt;slot&gt;</code> elements.
+        </p>
+        <aside class="special">
+          <p>
+            We will not cover Light DOM projection in this codelab, but you can
+            learn more about them in this
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots"
+              target="_blank"
+              >MDN article</a
+            >
+            or the
+            <a
+              href="https://lit.dev/docs/components/shadow-dom/#slots"
+              target="_blank"
+              >Lit docs site</a
+            >.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
