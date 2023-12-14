@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/tutorialPage.css" />
+
+    <title>Topic 9</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title"><a href="#7">9. Children</a></h2>
+
+        <p>
+          In this section, you will learn how to use slots to manage children in
+          Lit.
+        </p>
+        <h2 is-upgraded="" id="slots-children" data-text="Slots &amp; Children">
+          Slots &amp; Children
+        </h2>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4LnRzIiwiY29udGVudCI6ImltcG9ydCB7TGl0RWxlbWVudCwgaHRtbH0gZnJvbSAnbGl0JztcbmltcG9ydCB7Y3VzdG9tRWxlbWVudH0gZnJvbSAnbGl0L2RlY29yYXRvcnMuanMnO1xuXG5AY3VzdG9tRWxlbWVudChcIm15LWFydGljbGVcIilcbmV4cG9ydCBjbGFzcyBNeUFydGljbGUgZXh0ZW5kcyBMaXRFbGVtZW50IHtcbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiBodG1sYFxuICAgICAgPGFydGljbGU-XG4gICAgICAgIDxzbG90Pjwvc2xvdD5cbiAgICAgIDwvYXJ0aWNsZT5cbiAgIGA7XG4gIH1cbn0ifSx7Im5hbWUiOiJpbmRleC5odG1sIiwiY29udGVudCI6IjwhZG9jdHlwZSBodG1sPlxuPGhlYWQ-XG4gIDxzY3JpcHQgdHlwZT1cIm1vZHVsZVwiIHNyYz1cIi4vaW5kZXguanNcIj48L3NjcmlwdD5cbiAgPHN0eWxlPlxuICAgIGgxIHtcbiAgICAgIGNvbG9yOiByZWQgIWltcG9ydGFudDtcbiAgICB9XG4gIDwvc3R5bGU-XG48L2hlYWQ-XG48Ym9keT5cbiAgPG15LWFydGljbGU-XG4gICAgPHA-VGhpcyBpcyBhIGNoaWxkIHRvIDxjb2RlPiZsdDtteS1hcnRpY2xlPjwvY29kZT48L3A-XG4gIDwvbXktYXJ0aWNsZT5cbjwvYm9keT5cbiJ9LHsibmFtZSI6InBhY2thZ2UuanNvbiIsImNvbnRlbnQiOiJ7XG4gIFwiZGVwZW5kZW5jaWVzXCI6IHtcbiAgICBcImxpdFwiOiBcIl4yLjAuMFwiLFxuICAgIFwiQGxpdC9yZWFjdGl2ZS1lbGVtZW50XCI6IFwiXjEuMC4wXCIsXG4gICAgXCJsaXQtZWxlbWVudFwiOiBcIl4zLjAuMFwiLFxuICAgIFwibGl0LWh0bWxcIjogXCJeMi4wLjBcIlxuICB9XG59IiwiaGlkZGVuIjp0cnVlfV0"
+            target="_blank"
+            ><button class="button button-primary">
+              Code Checkpoint (TS)
+            </button></a
+          >
+        </p>
+        <p>Slots enable composition by allowing you to nest components.</p>
+        <p>
+          In React, children are inherited through props. The default slot is
+          <code translate="no" dir="ltr">props.children</code> and the
+          <code translate="no" dir="ltr">render</code> function defines where
+          the default slot is positioned. For example:
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-jsx" dir="ltr"><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">MyArticle</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">props</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">&lt;article&gt;</span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">props</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">children</span></span><span class="pun"><span class="pun">}&lt;/</span></span><span class="pln"><span class="pln">article</span></span><span class="pun"><span class="pun">&gt;;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">};</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Keep in mind that
+          <code translate="no" dir="ltr">props.children</code> are React
+          Components and not HTML elements.
+        </p>
+        <p>
+          In Lit, children are composed in the render function with
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot"
+            target="_blank"
+            >slot elements</a
+          >. Notice children are not inherited in the same manner as React. In
+          Lit, children are HTMLElements attached to slots. This attachment is
+          called <strong>Projection</strong>.
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-ts" dir="ltr"><span class="lit"><span class="lit">@customElement</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">"my-article"</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">export</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">MyArticle</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">LitElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; render</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> html</span></span><span class="str"><span class="str">`<br>&nbsp; &nbsp; &nbsp; &lt;article&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;slot&gt;&lt;/slot&gt;<br>&nbsp; &nbsp; &nbsp; &lt;/article&gt;<br>&nbsp; &nbsp;`</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <aside class="warning">
+          <p>
+            <strong>NOTE:</strong> In the code checkpoints, take notice of the
+            slotted elements in <code translate="no" dir="ltr">index.html</code>
+          </p>
+        </aside>
+        <h2 is-upgraded="" id="multiple-slots" data-text="Multiple Slots">
+          Multiple Slots
+        </h2>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4LnRzIiwiY29udGVudCI6ImltcG9ydCB7TGl0RWxlbWVudCwgaHRtbH0gZnJvbSAnbGl0JztcbmltcG9ydCB7Y3VzdG9tRWxlbWVudH0gZnJvbSAnbGl0L2RlY29yYXRvcnMuanMnO1xuXG5AY3VzdG9tRWxlbWVudChcIm15LWFydGljbGVcIilcbmV4cG9ydCBjbGFzcyBNeUFydGljbGUgZXh0ZW5kcyBMaXRFbGVtZW50IHtcbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiBodG1sYFxuICAgICAgPGFydGljbGU-XG4gICAgICA8L2FydGljbGU-XG4gICBgO1xuICB9XG59In0seyJuYW1lIjoiaW5kZXguaHRtbCIsImNvbnRlbnQiOiI8IWRvY3R5cGUgaHRtbD5cbjxoZWFkPlxuICA8c2NyaXB0IHR5cGU9XCJtb2R1bGVcIiBzcmM9XCIuL2luZGV4LmpzXCI-PC9zY3JpcHQ-XG48L2hlYWQ-XG48Ym9keT5cbiAgPG15LWFydGljbGU-XG4gICAgPGgzIHNsb3Q9XCJoZWFkZXJDaGlsZHJlblwiPlxuICAgICAgRXh0cnksIEV4dHJ5ISBSZWFkIGFsbCBhYm91dCBpdCFcbiAgICA8L2gzPlxuICAgIDxwIHNsb3Q9XCJzZWN0aW9uQ2hpbGRyZW5cIj5cbiAgICAgIENoaWxkcmVuIGFyZSBjb21wb3NlZCB3aXRoIHNsb3RzIGluIExpdCFcbiAgICA8L3A-XG4gIDwvbXktYXJ0aWNsZT5cbjwvYm9keT5cbiJ9LHsibmFtZSI6InBhY2thZ2UuanNvbiIsImNvbnRlbnQiOiJ7XG4gIFwiZGVwZW5kZW5jaWVzXCI6IHtcbiAgICBcImxpdFwiOiBcIl4yLjAuMFwiLFxuICAgIFwiQGxpdC9yZWFjdGl2ZS1lbGVtZW50XCI6IFwiXjEuMC4wXCIsXG4gICAgXCJsaXQtZWxlbWVudFwiOiBcIl4zLjAuMFwiLFxuICAgIFwibGl0LWh0bWxcIjogXCJeMi4wLjBcIlxuICB9XG59IiwiaGlkZGVuIjp0cnVlfV0"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <p>
+          In React, adding multiple slots is essentially the same as inheriting
+          more props.
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-jsx" dir="ltr"><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">MyArticle</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">props</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="str"><span class="str">&lt;article&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="str"><span class="str">&lt;header&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">props</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">headerChildren</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="pun"><span class="pun">&lt;</span></span><span class="str"><span class="str">/header&gt;<br>&nbsp; &nbsp; &nbsp; &lt;section&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; {props.sectionChildren}<br>&nbsp; &nbsp; &nbsp; &lt;/</span></span><span class="pln"><span class="pln">section</span></span><span class="pun"><span class="pun">&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">&lt;/</span></span><span class="pln"><span class="pln">article</span></span><span class="pun"><span class="pun">&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">};</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Similarly, adding more
+          <code translate="no" dir="ltr">&lt;slot&gt;</code> elements creates
+          more slots in Lit. Multiple slots are defined with the
+          <code translate="no" dir="ltr">name</code> attribute:
+          <code translate="no" dir="ltr">&lt;slot name="slot-name"&gt;</code>.
+          This allows children to declare which slot they will be assigned.
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-ts" dir="ltr"><span class="lit"><span class="lit">@customElement</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">"my-article"</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">export</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">MyArticle</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">LitElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; render</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> html</span></span><span class="str"><span class="str">`<br>&nbsp; &nbsp; &nbsp; &lt;article&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;header&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;slot name="headerChildren"&gt;&lt;/slot&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/header&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;section&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;slot name="sectionChildren"&gt;&lt;/slot&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/section&gt;<br>&nbsp; &nbsp; &nbsp; &lt;/article&gt;<br>&nbsp; &nbsp;`</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <h2
+          is-upgraded=""
+          id="default-slot-content"
+          data-text="Default Slot Content"
+        >
+          Default Slot Content
+        </h2>
+        <p>
+          Slots will display their subtree when there are no nodes projected to
+          that slot. When nodes are projected to a slot, that slot will not
+          display its subtree and instead display projected nodes.
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-ts" dir="ltr"><span class="lit"><span class="lit">@customElement</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">"my-element"</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">export</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">MyElement</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">LitElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; render</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> html</span></span><span class="str"><span class="str">`<br>&nbsp; &nbsp; &nbsp; &lt;section&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;slot name="slotWithDefault"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This message will not be rendered when children are attached to this slot!<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/slot&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>&nbsp; &nbsp; &nbsp; &lt;/section&gt;<br>&nbsp; &nbsp;`</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <h2
+          is-upgraded=""
+          id="assign-children-to-slots"
+          data-text="Assign children to slots"
+        >
+          Assign children to slots
+        </h2>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4LnRzIiwiY29udGVudCI6ImltcG9ydCB7TGl0RWxlbWVudCwgaHRtbH0gZnJvbSAnbGl0JztcbmltcG9ydCB7Y3VzdG9tRWxlbWVudH0gZnJvbSAnbGl0L2RlY29yYXRvcnMuanMnO1xuaW1wb3J0ICcuL215LWFydGljbGUuanMnO1xuXG5AY3VzdG9tRWxlbWVudChcIm15LW5ld3MtYXJ0aWNsZVwiKVxuZXhwb3J0IGNsYXNzIE15TmV3c0FydGljbGUgZXh0ZW5kcyBMaXRFbGVtZW50IHtcbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiBodG1sYFxuICAgICAgPG15LWFydGljbGU-XG4gICAgICA8L215LWFydGljbGU-XG4gICBgO1xuICB9XG59In0seyJuYW1lIjoiaW5kZXguaHRtbCIsImNvbnRlbnQiOiI8IWRvY3R5cGUgaHRtbD5cbjxoZWFkPlxuICA8c2NyaXB0IHR5cGU9XCJtb2R1bGVcIiBzcmM9XCIuL2luZGV4LmpzXCI-PC9zY3JpcHQ-XG48L2hlYWQ-XG48Ym9keT5cbiAgPG15LW5ld3MtYXJ0aWNsZT48L215LW5ld3MtYXJ0aWNsZT5cbjwvYm9keT5cbiJ9LHsibmFtZSI6Im15LWFydGljbGUudHMiLCJjb250ZW50IjoiaW1wb3J0IHtMaXRFbGVtZW50LCBodG1sfSBmcm9tICdsaXQnO1xuaW1wb3J0IHtjdXN0b21FbGVtZW50fSBmcm9tICdsaXQvZGVjb3JhdG9ycy5qcyc7XG5cbkBjdXN0b21FbGVtZW50KFwibXktYXJ0aWNsZVwiKVxuZXhwb3J0IGNsYXNzIE15QXJ0aWNsZSBleHRlbmRzIExpdEVsZW1lbnQge1xuICByZW5kZXIoKSB7XG4gICAgcmV0dXJuIGh0bWxgXG4gICAgICA8YXJ0aWNsZT5cbiAgICAgICAgPGhlYWRlcj5cbiAgICAgICAgICA8c2xvdCBuYW1lPVwiaGVhZGVyQ2hpbGRyZW5cIj48L3Nsb3Q-XG4gICAgICAgIDwvaGVhZGVyPlxuICAgICAgICA8c2VjdGlvbj5cbiAgICAgICAgICA8c2xvdCBuYW1lPVwic2VjdGlvbkNoaWxkcmVuXCI-PC9zbG90PlxuICAgICAgICA8L3NlY3Rpb24-XG4gICAgICA8L2FydGljbGU-XG4gICBgO1xuICB9XG59In0seyJuYW1lIjoicGFja2FnZS5qc29uIiwiY29udGVudCI6IntcbiAgXCJkZXBlbmRlbmNpZXNcIjoge1xuICAgIFwibGl0XCI6IFwiXjIuMC4wXCIsXG4gICAgXCJAbGl0L3JlYWN0aXZlLWVsZW1lbnRcIjogXCJeMS4wLjBcIixcbiAgICBcImxpdC1lbGVtZW50XCI6IFwiXjMuMC4wXCIsXG4gICAgXCJsaXQtaHRtbFwiOiBcIl4yLjAuMFwiXG4gIH1cbn0iLCJoaWRkZW4iOnRydWV9XQ"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <p>
+          In React, children are assigned to slots through the properties of a
+          Component. In the example below, React elements are passed to the
+          <code translate="no" dir="ltr">headerChildren</code> and
+          <code translate="no" dir="ltr">sectionChildren</code> props.
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-jsx" dir="ltr"><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">MyNewsArticle</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=&gt;</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="pun"><span class="pun">&lt;</span></span><span class="typ"><span class="typ">MyArticle</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;headerChildren</span></span><span class="pun"><span class="pun">={&lt;</span></span><span class="pln"><span class="pln">h3</span></span><span class="pun"><span class="pun">&gt;</span></span><span class="typ"><span class="typ">Extry</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Extry</span></span><span class="pun"><span class="pun">!</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Read</span></span><span class="pln"><span class="pln"> all about it</span></span><span class="pun"><span class="pun">!&lt;/</span></span><span class="pln"><span class="pln">h3</span></span><span class="pun"><span class="pun">&gt;}</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;sectionChildren</span></span><span class="pun"><span class="pun">={&lt;</span></span><span class="pln"><span class="pln">p</span></span><span class="pun"><span class="pun">&gt;</span></span><span class="typ"><span class="typ">Children</span></span><span class="pln"><span class="pln"> are props </span></span><span class="kwd"><span class="kwd">in</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">React</span></span><span class="pun"><span class="pun">!&lt;/</span></span><span class="pln"><span class="pln">p</span></span><span class="pun"><span class="pun">&gt;}</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="pun"><span class="pun">/&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">};</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          In Lit, children are assigned to slots using the
+          <code translate="no" dir="ltr">slot</code> attribute.
+        </p>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-ts" dir="ltr"><span class="lit"><span class="lit">@customElement</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">"my-news-article"</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">export</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">MyNewsArticle</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">LitElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; render</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> html</span></span><span class="str"><span class="str">`<br>&nbsp; &nbsp; &nbsp; &lt;my-article&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;h3 slot="headerChildren"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Extry, Extry! Read all about it!<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/h3&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p slot="sectionChildren"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Children are composed with slots in Lit!<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;/my-article&gt;<br>&nbsp; &nbsp;`</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          If there is no default slot (e.g.
+          <code translate="no" dir="ltr">&lt;slot&gt;</code>) and there is no
+          slot that has a <code translate="no" dir="ltr">name</code> attribute
+          (e.g. <code translate="no" dir="ltr">&lt;slot name="foo"&gt;</code>)
+          that matches the <code translate="no" dir="ltr">slot</code> attribute
+          of the custom element's children (e.g.
+          <code translate="no" dir="ltr">&lt;div slot="foo"&gt;</code>), then
+          that node will not be projected and will not display.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

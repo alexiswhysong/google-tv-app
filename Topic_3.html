@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/tutorialPage.css">
+
+    <title>Topic 3</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title">
+          <a href="#2">3. Define A Custom Element</a>
+        </h2>
+
+        <h2 is-upgraded="" id="custom-elements" data-text="Custom Elements">
+          Custom Elements
+        </h2>
+        <p>Web Components are a collection of 4 native web APIs. They are:</p>
+        <ul>
+          <li>ES Modules</li>
+          <li>Custom Elements</li>
+          <li>Shadow DOM</li>
+          <li>HTML Templates</li>
+        </ul>
+        <p>
+          You've already used the ES modules specification, which allows you to
+          create javascript modules with imports and exports that are loaded
+          into the page with
+          <code translate="no" dir="ltr">&lt;script type="module"&gt;</code>.
+        </p>
+        <h2
+          is-upgraded=""
+          id="defining-a-custom-element"
+          data-text="Defining a Custom Element"
+        >
+          <strong>Defining a Custom Element</strong>
+        </h2>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiAgPGhlYWQ-XG4gICAgPHNjcmlwdCBzcmM9XCIuL2luZGV4LmpzXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuICA8L2hlYWQ-XG4gIDxib2R5PlxuICA8L2JvZHk-XG48L2h0bWw-In0seyJuYW1lIjoiaW5kZXguanMiLCJjb250ZW50IjoiZG9jdW1lbnQuYm9keS5pbm5lckhUTUwgPSAnPGRpdj5UaGlzIHBhZ2UgaGFzIHN1Y2Nlc3NmdWxseSBsb2FkZWQhPC9kaXY-JzsifSx7Im5hbWUiOiJ0aHVtYl9kb3duLnN2ZyIsImNvbnRlbnQiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xNSAzSDZjLS44MyAwLTEuNTQuNS0xLjg0IDEuMjJsLTMuMDIgNy4wNWMtLjA5LjIzLS4xNC40Ny0uMTQuNzN2MmMwIDEuMS45IDIgMiAyaDYuMzFsLS45NSA0LjU3LS4wMy4zMmMwIC40MS4xNy43OS40NCAxLjA2TDkuODMgMjNsNi41OS02LjU5Yy4zNi0uMzYuNTgtLjg2LjU4LTEuNDFWNWMwLTEuMS0uOS0yLTItMnptNCAwdjEyaDRWM2gtNHpcIi8-PC9zdmc-In0seyJuYW1lIjoidGh1bWJfdXAuc3ZnIiwiY29udGVudCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTEgMjFoNFY5SDF2MTJ6bTIyLTExYzAtMS4xLS45LTItMi0yaC02LjMxbC45NS00LjU3LjAzLS4zMmMwLS40MS0uMTctLjc5LS40NC0xLjA2TDE0LjE3IDEgNy41OSA3LjU5QzcuMjIgNy45NSA3IDguNDUgNyA5djEwYzAgMS4xLjkgMiAyIDJoOWMuODMgMCAxLjU0LS41IDEuODQtMS4yMmwzLjAyLTcuMDVjLjA5LS4yMy4xNC0uNDcuMTQtLjczdi0yelwiLz48L3N2Zz4ifV0"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <p>
+          The Custom Elements specification lets users define their own HTML
+          elements using JavaScript. The names must contain a hyphen (<code
+            translate="no"
+            dir="ltr"
+            >-</code
+          >) to differentiate them from native browser elements. Clear the
+          <code translate="no" dir="ltr">index.js</code> file and define a
+          custom element class:
+        </p>
+        <h3 is-upgraded="" id="index.js" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">HTMLElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{}</span></span><span class="pln"><span class="pln"><br><br>customElements</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">define</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'rating-element'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          A custom element is defined by associating a class that extends
+          <code translate="no" dir="ltr">HTMLElement</code> with a hyphenated
+          tag name. The call to
+          <code translate="no" dir="ltr">customElements.define</code> tells the
+          browser to associate the class
+          <code translate="no" dir="ltr">RatingElement</code> with the tagName
+          <code translate="no" dir="ltr">‘rating-element'</code>. This means
+          that every element in your document with the name
+          <code translate="no" dir="ltr">&lt;rating-element&gt;</code> will be
+          associated with this class.
+        </p>
+        <aside class="warning">
+          <p>
+            Since
+            <code translate="no" dir="ltr">customElements.define</code> has a
+            global scope, you cannot currently call it more than once for the
+            same tag name even if the same class definition is given.
+          </p>
+        </aside>
+        <p>
+          Place a
+          <code translate="no" dir="ltr">&lt;rating-element&gt;</code> in the
+          document body and see what renders.
+        </p>
+        <h3 is-upgraded="" id="index.html" data-text="index.html">
+          <strong>index.<wbr />html</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-html" dir="ltr"><span class="tag"><span class="tag">&lt;body&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;rating-element&gt;&lt;/rating-element&gt;</span></span><span class="pln"><span class="pln"><br></span></span><span class="tag"><span class="tag">&lt;/body&gt;</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Now, looking at the output, you'll see that nothing has rendered. This
+          is expected, because you haven't told the browser how to render
+          <code translate="no" dir="ltr">&lt;rating-element&gt;</code>. You can
+          confirm that the Custom Element definition has succeeded by selecting
+          the <code translate="no" dir="ltr">&lt;rating-element&gt;</code> in
+          Chrome Dev Tools' element selector and, in the console, calling:
+        </p>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="pln"><span class="pln">$0</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">constructor<br></span></span></code></pre>
+        </devsite-code>
+        <p>Which should output:</p>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">HTMLElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <h2
+          is-upgraded=""
+          id="custom-element-lifecycle"
+          data-text="Custom Element Lifecycle"
+        >
+          <strong>Custom Element Lifecycle</strong>
+        </h2>
+        <p>Custom Elements come with a set of lifecycle hooks. They are:</p>
+        <ul>
+          <li><code translate="no" dir="ltr">constructor</code></li>
+          <li><code translate="no" dir="ltr">connectedCallback</code></li>
+          <li><code translate="no" dir="ltr">disconnectedCallback</code></li>
+          <li>
+            <code translate="no" dir="ltr">attributeChangedCallback</code>
+          </li>
+          <li><code translate="no" dir="ltr">adoptedCallback</code></li>
+        </ul>
+        <p>
+          The <code translate="no" dir="ltr">constructor</code> is called when
+          the element is first created: for example, by calling
+          <code translate="no" dir="ltr"
+            >document.createElement(‘rating-element')</code
+          >
+          or <code translate="no" dir="ltr">new RatingElement()</code>. The
+          constructor is a good place to set up your element, but it is
+          typically considered bad practice to do DOM manipulations in the
+          constructor for element "boot-up" performance reasons.
+        </p>
+        <p>
+          The <code translate="no" dir="ltr">connectedCallback</code> is called
+          when the custom element is attached to the DOM. This is typically
+          where initial DOM manipulations happen.
+        </p>
+        <p>
+          The <code translate="no" dir="ltr">disconnectedCallback</code> is
+          called after the custom element is removed from the DOM.
+        </p>
+        <p>
+          The
+          <code translate="no" dir="ltr"
+            >attributeChangedCallback(attrName, oldValue, newValue)</code
+          >
+          is called when any of the user-specified attributes change.
+        </p>
+        <p>
+          The <code translate="no" dir="ltr">adoptedCallback</code> is called
+          when the custom element is adopted from another
+          <code translate="no" dir="ltr">documentFragment</code> into the main
+          document via <code translate="no" dir="ltr">adoptNode</code> such as
+          in <code translate="no" dir="ltr">HTMLTemplateElement</code>.
+        </p>
+        <h2 is-upgraded="" id="render-dom" data-text="Render DOM">
+          <strong>Render DOM</strong>
+        </h2>
+        <p>
+          Now, return to the custom element and associate some DOM with it. Set
+          the element's content when it gets attached to the DOM:
+        </p>
+        <h3 is-upgraded="" id="index.js_1" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">HTMLElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;constructor</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">super</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp;connectedCallback</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">innerHTML </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">`<br>&nbsp; &nbsp; &nbsp;&lt;style&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;rating-element {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;display: inline-flex;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;align-items: center;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;rating-element button {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;background: transparent;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;border: none;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cursor: pointer;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp;&lt;/style&gt;<br>&nbsp; &nbsp; &nbsp;&lt;button class="thumb_down" &gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"&gt;&lt;path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/&gt;&lt;/svg&gt;<br>&nbsp; &nbsp; &nbsp;&lt;/button&gt;<br>&nbsp; &nbsp; &nbsp;&lt;span class="rating"&gt;${this.rating}&lt;/span&gt;<br>&nbsp; &nbsp; &nbsp;&lt;button class="thumb_up"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"&gt;&lt;path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/&gt;&lt;/svg&gt;<br>&nbsp; &nbsp; &nbsp;&lt;/button&gt;<br>&nbsp; &nbsp;`</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>customElements</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">define</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'rating-element'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          In the <code translate="no" dir="ltr">constructor</code>, you store an
+          instance property called
+          <code translate="no" dir="ltr">rating</code> on the element. In the
+          <code translate="no" dir="ltr">connectedCallback</code>, you add DOM
+          children to
+          <code translate="no" dir="ltr">&lt;rating-element&gt;</code> to
+          display the current rating, together with thumbs up and thumbs down
+          buttons.
+        </p>
+        <aside class="warning">
+          <p>
+            Please note that for the sake of example, you are not following
+            accessibility best practices for these controls and inputs.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>

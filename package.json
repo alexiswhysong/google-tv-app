@@ -15,11 +15,11 @@
     "start": "web-dev-server"
   },
   "dependencies": {
+    "@shoelace-style/shoelace": "2.11.2",
     "lit": "3.0.1",
-    "@shoelace-style/shoelace": "2.11.2"
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "rollup-plugin-copy": "3.5.0",
     "@babel/preset-env": "^7.16.4",
     "@custom-elements-manifest/analyzer": "^0.4.17",
     "@open-wc/building-rollup": "^2.0.1",
@@ -33,8 +33,10 @@
     "@web/test-runner": "^0.13.22",
     "babel-plugin-template-html-minifier": "^4.1.0",
     "deepmerge": "^4.2.2",
+    "fs": "^0.0.1-security",
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
+    "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-workbox": "^6.2.0"
   },

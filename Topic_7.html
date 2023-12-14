@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/tutorialPage.css">
+    <title>Topic 7</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title"><a href="#6">7. Lit-html</a></h2>
+
+        <h2 is-upgraded="" id="code-checkpoint" data-text="Code Checkpoint">
+          <strong>Code Checkpoint</strong>
+        </h2>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiAgPGhlYWQ-XG4gICAgPHNjcmlwdCBzcmM9XCIuL2luZGV4LmpzXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuICAgIDxzdHlsZT5cbiAgICAgIHNwYW4ge1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCByZWQ7XG4gICAgICB9XG4gICAgPC9zdHlsZT5cbiAgPC9oZWFkPlxuICA8Ym9keT5cbiAgICA8dGVtcGxhdGUgaWQ9XCJyYXRpbmctZWxlbWVudC10ZW1wbGF0ZVwiPlxuICAgICAgPHN0eWxlPlxuICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgICBidXR0b24ge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuICAgICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIH1cbiAgICAgICAgXG4gICAgICAgIDpob3N0KFt2b3RlPXVwXSkgLnRodW1iX3VwIHtcbiAgICAgICAgICBmaWxsOiBncmVlbjtcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgOmhvc3QoW3ZvdGU9ZG93bl0pIC50aHVtYl9kb3duIHtcbiAgICAgICAgICBmaWxsOiByZWQ7XG4gICAgICAgIH1cbiAgICAgIDwvc3R5bGU-XG4gICAgICA8YnV0dG9uIGNsYXNzPVwidGh1bWJfZG93blwiID5cbiAgICAgICAgPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgaGVpZ2h0PVwiMjRcIiB2aWV3Ym94PVwiMCAwIDI0IDI0XCIgd2lkdGg9XCIyNFwiPjxwYXRoIGQ9XCJNMTUgM0g2Yy0uODMgMC0xLjU0LjUtMS44NCAxLjIybC0zLjAyIDcuMDVjLS4wOS4yMy0uMTQuNDctLjE0LjczdjJjMCAxLjEuOSAyIDIgMmg2LjMxbC0uOTUgNC41Ny0uMDMuMzJjMCAuNDEuMTcuNzkuNDQgMS4wNkw5LjgzIDIzbDYuNTktNi41OWMuMzYtLjM2LjU4LS44Ni41OC0xLjQxVjVjMC0xLjEtLjktMi0yLTJ6bTQgMHYxMmg0VjNoLTR6XCIvPjwvc3ZnPlxuICAgICAgPC9idXR0b24-XG4gICAgICA8c3BhbiBjbGFzcz1cInJhdGluZ1wiPjwvc3Bhbj5cbiAgICAgIDxidXR0b24gY2xhc3M9XCJ0aHVtYl91cFwiPlxuICAgICAgICA8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdib3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xIDIxaDRWOUgxdjEyem0yMi0xMWMwLTEuMS0uOS0yLTItMmgtNi4zMWwuOTUtNC41Ny4wMy0uMzJjMC0uNDEtLjE3LS43OS0uNDQtMS4wNkwxNC4xNyAxIDcuNTkgNy41OUM3LjIyIDcuOTUgNyA4LjQ1IDcgOXYxMGMwIDEuMS45IDIgMiAyaDljLjgzIDAgMS41NC0uNSAxLjg0LTEuMjJsMy4wMi03LjA1Yy4wOS0uMjMuMTQtLjQ3LjE0LS43M3YtMnpcIi8-PC9zdmc-XG4gICAgICA8L2J1dHRvbj5cbiAgICA8L3RlbXBsYXRlPlxuXG4gICAgPHJhdGluZy1lbGVtZW50IHJhdGluZz1cIjVcIj48L3JhdGluZy1lbGVtZW50PlxuICA8L2JvZHk-XG48L2h0bWw-In0seyJuYW1lIjoiaW5kZXguanMiLCJjb250ZW50IjoiY2xhc3MgUmF0aW5nRWxlbWVudCBleHRlbmRzIEhUTUxFbGVtZW50IHtcbiAgY29uc3RydWN0b3IoKSB7XG4gICAgc3VwZXIoKTtcbiAgICB0aGlzLl9yYXRpbmcgPSAwO1xuICAgIHRoaXMuX3ZvdGUgPSBudWxsO1xuICAgIHRoaXMuX2JvdW5kT25VcENsaWNrID0gdGhpcy5fb25VcENsaWNrLmJpbmQodGhpcyk7XG4gICAgdGhpcy5fYm91bmRPbkRvd25DbGljayA9IHRoaXMuX29uRG93bkNsaWNrLmJpbmQodGhpcyk7XG4gIH1cblxuICBjb25uZWN0ZWRDYWxsYmFjaygpIHtcbiAgICBjb25zdCBzaGFkb3dSb290ID0gdGhpcy5hdHRhY2hTaGFkb3coe21vZGU6ICdvcGVuJ30pO1xuICAgIGNvbnN0IHRlbXBsYXRlQ29udGVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyYXRpbmctZWxlbWVudC10ZW1wbGF0ZScpLmNvbnRlbnQ7XG4gICAgY29uc3QgY2xvbmVkQ29udGVudCA9IHRlbXBsYXRlQ29udGVudC5jbG9uZU5vZGUodHJ1ZSk7XG4gICAgc2hhZG93Um9vdC5hcHBlbmRDaGlsZChjbG9uZWRDb250ZW50KTtcbiAgICBcbiAgICB0aGlzLnNoYWRvd1Jvb3QucXVlcnlTZWxlY3RvcignLnJhdGluZycpLmlubmVyVGV4dCA9IHRoaXMucmF0aW5nO1xuICAgIFxuICAgIHRoaXMuc2hhZG93Um9vdC5xdWVyeVNlbGVjdG9yKCcudGh1bWJfdXAnKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIHRoaXMuX2JvdW5kT25VcENsaWNrKTtcbiAgICB0aGlzLnNoYWRvd1Jvb3QucXVlcnlTZWxlY3RvcignLnRodW1iX2Rvd24nKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIHRoaXMuX2JvdW5kT25Eb3duQ2xpY2spO1xuICB9XG5cbiAgZGlzY29ubmVjdGVkQ2FsbGJhY2soKSB7XG4gICAgdGhpcy5zaGFkb3dSb290LnF1ZXJ5U2VsZWN0b3IoJy50aHVtYl91cCcpLnJlbW92ZUV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgdGhpcy5fYm91bmRPblVwQ2xpY2spO1xuICAgIHRoaXMuc2hhZG93Um9vdC5xdWVyeVNlbGVjdG9yKCcudGh1bWJfZG93bicpLnJlbW92ZUV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgdGhpcy5fYm91bmRPbkRvd25DbGljayk7XG4gIH1cblxuICBzdGF0aWMgZ2V0IG9ic2VydmVkQXR0cmlidXRlcygpIHtcbiAgICByZXR1cm4gWydyYXRpbmcnLCAndm90ZSddO1xuICB9XG5cbiAgYXR0cmlidXRlQ2hhbmdlZENhbGxiYWNrKGF0dHJpYnV0ZU5hbWUsIG9sZFZhbHVlLCBuZXdWYWx1ZSkge1xuICAgIGlmIChhdHRyaWJ1dGVOYW1lID09PSAncmF0aW5nJykge1xuICAgICAgY29uc3QgbmV3UmF0aW5nID0gTnVtYmVyKG5ld1ZhbHVlKTtcbiAgICAgIFxuICAgICAgdGhpcy5yYXRpbmcgPSBuZXdSYXRpbmc7XG4gICAgfSBlbHNlIGlmIChhdHRyaWJ1dGVOYW1lID09PSAndm90ZScpIHtcbiAgICAgIHRoaXMudm90ZSA9IG5ld1ZhbHVlO1xuICAgIH1cbiAgfVxuXG4gIHNldCByYXRpbmcodmFsdWUpIHtcbiAgICB0aGlzLl9yYXRpbmcgPSB2YWx1ZTtcbiAgICBcbiAgICBpZiAoIXRoaXMuc2hhZG93Um9vdCkge1xuICAgICAgcmV0dXJuO1xuICAgIH1cblxuICAgIGNvbnN0IHJhdGluZ0VsID0gdGhpcy5zaGFkb3dSb290LnF1ZXJ5U2VsZWN0b3IoJy5yYXRpbmcnKTtcbiAgICBcbiAgICBpZiAocmF0aW5nRWwpIHtcbiAgICAgIHJhdGluZ0VsLmlubmVyVGV4dCA9IHRoaXMuX3JhdGluZztcbiAgICB9XG4gIH1cblxuICBnZXQgcmF0aW5nKCkge1xuICAgIHJldHVybiB0aGlzLl9yYXRpbmc7XG4gIH1cblxuICBzZXQgdm90ZShuZXdWYWx1ZSkge1xuICAgIGNvbnN0IG9sZFZhbHVlID0gdGhpcy5fdm90ZTtcbiAgICBpZiAobmV3VmFsdWUgPT09IG9sZFZhbHVlKSB7XG4gICAgICByZXR1cm47XG4gICAgfVxuICAgIFxuICAgIGlmIChuZXdWYWx1ZSA9PT0gJ3VwJykge1xuICAgICAgaWYgKG9sZFZhbHVlID09PSAnZG93bicpIHtcbiAgICAgICAgdGhpcy5yYXRpbmcgKz0gMjtcbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIHRoaXMucmF0aW5nICs9IDE7XG4gICAgICB9XG4gICAgfSBlbHNlIGlmIChuZXdWYWx1ZSA9PT0gJ2Rvd24nKSB7XG4gICAgICBpZiAob2xkVmFsdWUgPT09ICd1cCcpIHtcbiAgICAgICAgdGhpcy5yYXRpbmcgLT0gMjtcbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIHRoaXMucmF0aW5nIC09IDE7XG4gICAgICB9XG4gICAgfVxuICAgIFxuICAgIHRoaXMuX3ZvdGUgPSBuZXdWYWx1ZTtcbiAgICB0aGlzLnNldEF0dHJpYnV0ZSgndm90ZScsIG5ld1ZhbHVlKTtcbiAgfVxuXG4gIGdldCB2b3RlKCkge1xuICAgIHJldHVybiB0aGlzLl92b3RlO1xuICB9XG5cbiAgX29uVXBDbGljaygpIHtcbiAgICB0aGlzLnZvdGUgPSAndXAnO1xuICB9XG5cbiAgX29uRG93bkNsaWNrKCkge1xuICAgIHRoaXMudm90ZSA9ICdkb3duJztcbiAgfVxufVxuXG5jdXN0b21FbGVtZW50cy5kZWZpbmUoJ3JhdGluZy1lbGVtZW50JywgUmF0aW5nRWxlbWVudCk7In0seyJuYW1lIjoidGh1bWJfZG93bi5zdmciLCJjb250ZW50IjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgaGVpZ2h0PVwiMjRcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgd2lkdGg9XCIyNFwiPjxwYXRoIGQ9XCJNMTUgM0g2Yy0uODMgMC0xLjU0LjUtMS44NCAxLjIybC0zLjAyIDcuMDVjLS4wOS4yMy0uMTQuNDctLjE0LjczdjJjMCAxLjEuOSAyIDIgMmg2LjMxbC0uOTUgNC41Ny0uMDMuMzJjMCAuNDEuMTcuNzkuNDQgMS4wNkw5LjgzIDIzbDYuNTktNi41OWMuMzYtLjM2LjU4LS44Ni41OC0xLjQxVjVjMC0xLjEtLjktMi0yLTJ6bTQgMHYxMmg0VjNoLTR6XCIvPjwvc3ZnPiJ9LHsibmFtZSI6InRodW1iX3VwLnN2ZyIsImNvbnRlbnQiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xIDIxaDRWOUgxdjEyem0yMi0xMWMwLTEuMS0uOS0yLTItMmgtNi4zMWwuOTUtNC41Ny4wMy0uMzJjMC0uNDEtLjE3LS43OS0uNDQtMS4wNkwxNC4xNyAxIDcuNTkgNy41OUM3LjIyIDcuOTUgNyA4LjQ1IDcgOXYxMGMwIDEuMS45IDIgMiAyaDljLjgzIDAgMS41NC0uNSAxLjg0LTEuMjJsMy4wMi03LjA1Yy4wOS0uMjMuMTQtLjQ3LjE0LS43M3YtMnpcIi8-PC9zdmc-In1d"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <h2 is-upgraded="" id="why-lit-html" data-text="Why lit-html">
+          Why lit-html
+        </h2>
+        <p>
+          First and foremost, the
+          <code translate="no" dir="ltr">&lt;template&gt;</code> tag is useful
+          and performant, but it isn't packaged with the logic of the component
+          thus making it difficult to distribute the template with the rest of
+          the logic. Additionally the way template elements are used inherently
+          lend to imperative code, which in many cases, leads to less-readable
+          code compared to declarative coding patterns.
+        </p>
+        <p>
+          This is where lit-html comes in! Lit html is the rendering system of
+          Lit that allows you to write HTML templates in Javascript, then
+          efficiently render and re-render those templates together with data to
+          create and update DOM. It is similar to popular JSX and VDOM libraries
+          but it runs natively in the browser and much more efficiently in many
+          cases.
+        </p>
+        <aside class="special">
+          <p>
+            You can learn about more Lit's templating features that we will not
+            cover (such as template repeating and property binding) on the
+            <a href="https://lit.dev/docs/templates/overview/" target="_blank"
+              >Lit documentation</a
+            >
+            website.
+          </p>
+        </aside>
+        <h2 is-upgraded="" id="using-lit-html" data-text="Using Lit HTML">
+          <strong>Using Lit HTML</strong>
+        </h2>
+        <p>
+          Next, migrate the native Web Component
+          <code translate="no" dir="ltr">rating-element</code> to use Lit
+          template which use
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates"
+            target="_blank"
+            ><em>Tagged Template Literals</em></a
+          >
+          which are functions that take template strings as arguments with a
+          special syntax. Lit then uses template elements under the hood to
+          provide fast rendering as well as providing some sanitization features
+          for security. Start by migrating the
+          <code translate="no" dir="ltr">&lt;template&gt;</code> in
+          <code translate="no" dir="ltr">index.html</code> into a Lit template
+          by adding a <code translate="no" dir="ltr">render()</code> method to
+          the webcomponent:
+        </p>
+        <aside class="special">
+          <p>
+            Tagged template literal syntax highlighting is not available on all
+            coding environments like Google Codelabs. If you are using Visual
+            Studio Code to write tagged template literals, you should consider
+            downloading the
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin"
+              target="_blank"
+              >lit-plugin</a
+            >
+            plugin for syntax highlighting as well as other Web Component
+            features, or simply use the
+            <a href="https://lit.dev/playground" target="_blank"
+              >lit.dev playground</a
+            >!
+          </p>
+        </aside>
+        <h3 is-upgraded="" id="index.js_9" data-text="index.js">
+          index.<wbr />js
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="com"><span class="com">// Dont forget to import from Lit!</span></span><span class="pln"><span class="pln"><br></span></span><span class="kwd"><span class="kwd">import</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln">render</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> html</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">from</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'lit'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">HTMLElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">...</span></span><span class="pln"><span class="pln"><br>&nbsp; render</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(!</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">template</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> html</span></span><span class="str"><span class="str">`<br>&nbsp; &nbsp; &nbsp; &lt;style&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; :host {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: inline-flex;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; align-items: center;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &nbsp; button {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: transparent;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: none;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cursor: pointer;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br><br>&nbsp; &nbsp; &nbsp; &nbsp;:host([vote=up]) .thumb_up {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;fill: green;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br><br>&nbsp; &nbsp; &nbsp; &nbsp;:host([vote=down]) .thumb_down {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;fill: red;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &lt;/style&gt;<br>&nbsp; &nbsp; &nbsp; &lt;button class="thumb_down"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;svg xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24" width="24"&gt;&lt;path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/&gt;&lt;/svg&gt;<br>&nbsp; &nbsp; &nbsp; &lt;/button&gt;<br>&nbsp; &nbsp; &nbsp; &lt;span class="rating"&gt;${this.rating}&lt;/span&gt;<br>&nbsp; &nbsp; &nbsp; &lt;button class="thumb_up"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;svg xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24" width="24"&gt;&lt;path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/&gt;&lt;/svg&gt;<br>&nbsp; &nbsp; &nbsp; &lt;/button&gt;`</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br><br>&nbsp; &nbsp; render</span></span><span class="pun"><span class="pun">(</span></span><span class="kwd"><span class="kwd">template</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          You may also delete your template from
+          <code translate="no" dir="ltr">index.html</code>. In this render
+          method you define a variable called
+          <code translate="no" dir="ltr">template</code> and invoke the
+          <code translate="no" dir="ltr">html</code> tagged template literal
+          function. You will also notice that you have performed a simple data
+          binding inside the
+          <code translate="no" dir="ltr">span.rating</code> element by using the
+          template literal interpolation syntax of
+          <code translate="no" dir="ltr">${...}</code>. This means that you will
+          eventually no longer need to imperatively update that node.
+          Additionally, you call the lit
+          <code translate="no" dir="ltr">render</code> method which
+          synchronously renders the template into the shadow root.
+        </p>
+        <h2
+          is-upgraded=""
+          id="migrating-to-declarative-syntax"
+          data-text="Migrating to Declarative Syntax"
+        >
+          Migrating to Declarative Syntax
+        </h2>
+        <p>
+          Now that you have gotten rid of the
+          <code translate="no" dir="ltr">&lt;template&gt;</code> element,
+          refactor the code to instead call the newly-defined
+          <code translate="no" dir="ltr">render</code> method. You can start by
+          leveraging lit's event listener binding to clear up the listener code:
+        </p>
+        <h3 is-upgraded="" id="index.js_10" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-html" dir="ltr"><span class="tag"><span class="tag">&lt;button</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="atn"><span class="atn">class</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"thumb_down"</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; @</span></span><span class="atn"><span class="atn">click</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">${()</span></span><span class="pln"><span class="pln"> </span></span><span class="tag"><span class="tag">=&gt;</span></span><span class="pln"><span class="pln"> {this.vote = 'down'}}&gt;<br>...<br></span></span><span class="tag"><span class="tag">&lt;button</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="atn"><span class="atn">class</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"thumb_up"</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; @</span></span><span class="atn"><span class="atn">click</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">${()</span></span><span class="pln"><span class="pln"> </span></span><span class="tag"><span class="tag">=&gt;</span></span><span class="pln"><span class="pln"> {this.vote = 'up'}}&gt;<br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Lit templates can add an event listener to a node with the
+          <strong>@EVENT_NAME</strong> binding syntax where, in this case, you
+          update the <code translate="no" dir="ltr">vote</code> property every
+          time these buttons are clicked.
+        </p>
+        <aside class="special">
+          <p>
+            You can learn more about the Lit binding syntax on the
+            <a
+              href="https://lit.dev/docs/templates/expressions/"
+              target="_blank"
+              >Lit documentation site</a
+            >.
+          </p>
+        </aside>
+        <p>
+          Next, clean up the event listener initialization code in the
+          <code translate="no" dir="ltr">constructor</code> and the
+          <code translate="no" dir="ltr">connectedCallback</code> and
+          <code translate="no" dir="ltr">disconnectedCallback</code>:
+        </p>
+        <h3 is-upgraded="" id="index.js_11" data-text="index.js">
+          index.<wbr />js
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="pln"><span class="pln">constructor</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">super</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">null</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>connectedCallback</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">attachShadow</span></span><span class="pun"><span class="pun">({</span></span><span class="pln"><span class="pln">mode</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'open'</span></span><span class="pun"><span class="pun">});</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">render</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="com"><span class="com">// remove disonnectedCallback and _onUpClick and _onDownClick</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          You were able to remove the click listener logic from all three
+          callbacks and even remove the
+          <code translate="no" dir="ltr">disconnectedCallback</code> entirely!
+          You were also able to remove all of the DOM initialization code from
+          the <code translate="no" dir="ltr">connectedCallback</code> making it
+          look much more elegant. This also means that you can get rid of the
+          <code translate="no" dir="ltr">_onUpClick</code> and
+          <code translate="no" dir="ltr">_onDownClick</code> listener methods!
+        </p>
+        <p>
+          Finally, update the property setters to utilize the
+          <code translate="no" dir="ltr">render</code> method so that the dom
+          can update when either the properties or attributes change:
+        </p>
+        <h3 is-upgraded="" id="index.js_12" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">set</span></span><span class="pln"><span class="pln"> rating</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">value</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> value</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">render</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="pun"><span class="pun">...</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="kwd"><span class="kwd">set</span></span><span class="pln"><span class="pln"> vote</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> oldValue </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> oldValue</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>&nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'up'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">oldValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'down'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">+=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">2</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">+=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'down'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">oldValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'up'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">-=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">2</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">-=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> newValue</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">setAttribute</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'vote'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> newValue</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="com"><span class="com">// add render method</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">render</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <aside class="warning">
+          <p>
+            Note, this is not the most-efficient way of writing this, but its
+            complexity is meant to exemplify features of the Web Component and
+            Lit lifecycle.
+          </p>
+        </aside>
+        <p>
+          Here, you were able to remove the dom update logic from the
+          <code translate="no" dir="ltr">rating</code> setter and you added a
+          call to <code translate="no" dir="ltr">render</code> from the
+          <code translate="no" dir="ltr">vote</code> setter. Now the template is
+          much more readable as you now can see where the bindings and event
+          listeners are applied.
+        </p>
+        <p>
+          Refresh the page, and you should have a functioning rating button that
+          should look like this when the upvote is pressed!
+        </p>
+        <p class="image-container">
+          <img
+            alt="Thumb up and down rating slider with a value of 6 and the up thumb coloredgreen"
+            src="/static/codelabs/the-lit-path/img/component.png"
+            srcset="
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_36.png     36w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_48.png     48w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_72.png     72w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_96.png     96w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_480.png   480w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_720.png   720w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_856.png   856w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_960.png   960w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_1440.png 1440w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_1920.png 1920w,
+              https://codelabs.developers.google.com/static/codelabs/the-lit-path/img/component_2880.png 2880w
+            "
+            sizes="(max-width: 840px) 100vw, 856px"
+          />
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4;
+      }
+
+      #content-top {
+          background-color: #fff;
+          margin: 10px;
+          padding: 5px;
+      }
+
+      h2 {
+          font-size: 32px;
+          color: #333;
+      }
+
+      p {
+          color: #666;
+          line-height: 1.6;
+      }
+
+      a {
+          color: #007BFF;
+          text-decoration: none;
+      }
+
+      a:hover {
+          text-decoration: underline;
+      }
+
+      ul {
+          list-style-type: none;
+          padding: 0;
+      }
+
+      li {
+          margin-bottom: 10px;
+      }
+  </style>
+    <title>Topic 10</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title">
+          <a href="#8">10. Congratulations</a>
+        </h2>
+
+        <p>
+          Congratulations, you've successfully built a Web Component from
+          scratch and evolved it into a LitElement!
+        </p>
+        <p>
+          Lit is super small (&lt; 5kb minified + gzipped), super fast, and
+          really fun to code with! You can make components to be consumed by
+          other frameworks, or you can build full-fledged apps with it!
+        </p>
+        <p>
+          You now know what a Web Component is, how to build one, and how Lit
+          makes it easier to build them!
+        </p>
+        <h2 is-upgraded="" id="code-checkpoint_1" data-text="Code Checkpoint">
+          <strong>Code Checkpoint</strong>
+        </h2>
+        <p>
+          Do you want to check your final code against ours? Compare it
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiAgPGhlYWQ-XG4gICAgPHNjcmlwdCBzcmM9XCIuL2luZGV4LmpzXCIgdHlwZT1cIm1vZHVsZVwiPjwvc2NyaXB0PlxuICAgIDxzdHlsZT5cbiAgICAgIHNwYW4ge1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCByZWQ7XG4gICAgICB9XG4gICAgPC9zdHlsZT5cbiAgPC9oZWFkPlxuICA8Ym9keT5cbiAgICA8cmF0aW5nLWVsZW1lbnQgcmF0aW5nPVwiNVwiPjwvcmF0aW5nLWVsZW1lbnQ-XG4gIDwvYm9keT5cbjwvaHRtbD4ifSx7Im5hbWUiOiJpbmRleC5qcyIsImNvbnRlbnQiOiJpbXBvcnQge0xpdEVsZW1lbnQsIGh0bWwsIGNzc30gZnJvbSAnbGl0JztcblxuY2xhc3MgUmF0aW5nRWxlbWVudCBleHRlbmRzIExpdEVsZW1lbnQge1xuICBzdGF0aWMgZ2V0IHN0eWxlcygpIHtcbiAgICByZXR1cm4gY3NzYFxuICAgICAgOmhvc3Qge1xuICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgIH1cbiAgICAgIGJ1dHRvbiB7XG4gICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgIH1cblxuICAgICAgOmhvc3QoW3ZvdGU9dXBdKSAudGh1bWJfdXAge1xuICAgICAgICBmaWxsOiBncmVlbjtcbiAgICAgIH1cblxuICAgICAgOmhvc3QoW3ZvdGU9ZG93bl0pIC50aHVtYl9kb3duIHtcbiAgICAgICAgZmlsbDogcmVkO1xuICAgICAgfVxuICAgIGA7XG4gIH1cbiAgXG4gIHN0YXRpYyBnZXQgcHJvcGVydGllcygpIHtcbiAgICByZXR1cm4ge1xuICAgICAgcmF0aW5nOiB7XG4gICAgICAgIHR5cGU6IE51bWJlcixcbiAgICAgIH0sXG4gICAgICB2b3RlOiB7XG4gICAgICAgIHR5cGU6IFN0cmluZyxcbiAgICAgICAgcmVmbGVjdDogdHJ1ZSxcbiAgICAgIH1cbiAgICB9O1xuICB9XG4gIFxuICBjb25zdHJ1Y3RvcigpIHtcbiAgICBzdXBlcigpO1xuICAgIHRoaXMuX3JhdGluZyA9IDA7XG4gICAgdGhpcy5fdm90ZSA9IG51bGw7XG4gIH1cbiAgXG4gIHdpbGxVcGRhdGUoY2hhbmdlZFByb3BzKSB7XG4gICAgaWYgKGNoYW5nZWRQcm9wcy5oYXMoJ3ZvdGUnKSkge1xuICAgICAgY29uc3QgbmV3VmFsdWUgPSB0aGlzLnZvdGU7XG4gICAgICBjb25zdCBvbGRWYWx1ZSA9IGNoYW5nZWRQcm9wcy5nZXQoJ3ZvdGUnKTtcblxuICAgICAgaWYgKG5ld1ZhbHVlID09PSAndXAnKSB7XG4gICAgICAgIGlmIChvbGRWYWx1ZSA9PT0gJ2Rvd24nKSB7XG4gICAgICAgICAgdGhpcy5yYXRpbmcgKz0gMjtcbiAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICB0aGlzLnJhdGluZyArPSAxO1xuICAgICAgICB9XG4gICAgICB9IGVsc2UgaWYgKG5ld1ZhbHVlID09PSAnZG93bicpIHtcbiAgICAgICAgaWYgKG9sZFZhbHVlID09PSAndXAnKSB7XG4gICAgICAgICAgdGhpcy5yYXRpbmcgLT0gMjtcbiAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICB0aGlzLnJhdGluZyAtPSAxO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgcmVuZGVyKCkge1xuICAgIHJldHVybiBodG1sYFxuICAgICAgPGJ1dHRvblxuICAgICAgICAgIGNsYXNzPVwidGh1bWJfZG93blwiXG4gICAgICAgICAgQGNsaWNrPSR7KCkgPT4ge3RoaXMudm90ZSA9ICdkb3duJ319PlxuICAgICAgICA8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdib3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xNSAzSDZjLS44MyAwLTEuNTQuNS0xLjg0IDEuMjJsLTMuMDIgNy4wNWMtLjA5LjIzLS4xNC40Ny0uMTQuNzN2MmMwIDEuMS45IDIgMiAyaDYuMzFsLS45NSA0LjU3LS4wMy4zMmMwIC40MS4xNy43OS40NCAxLjA2TDkuODMgMjNsNi41OS02LjU5Yy4zNi0uMzYuNTgtLjg2LjU4LTEuNDFWNWMwLTEuMS0uOS0yLTItMnptNCAwdjEyaDRWM2gtNHpcIi8-PC9zdmc-XG4gICAgICA8L2J1dHRvbj5cbiAgICAgIDxzcGFuIGNsYXNzPVwicmF0aW5nXCI-JHt0aGlzLnJhdGluZ308L3NwYW4-XG4gICAgICA8YnV0dG9uXG4gICAgICAgICAgY2xhc3M9XCJ0aHVtYl91cFwiXG4gICAgICAgICAgQGNsaWNrPSR7KCkgPT4ge3RoaXMudm90ZSA9ICd1cCd9fT5cbiAgICAgICAgPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgaGVpZ2h0PVwiMjRcIiB2aWV3Ym94PVwiMCAwIDI0IDI0XCIgd2lkdGg9XCIyNFwiPjxwYXRoIGQ9XCJNMSAyMWg0VjlIMXYxMnptMjItMTFjMC0xLjEtLjktMi0yLTJoLTYuMzFsLjk1LTQuNTcuMDMtLjMyYzAtLjQxLS4xNy0uNzktLjQ0LTEuMDZMMTQuMTcgMSA3LjU5IDcuNTlDNy4yMiA3Ljk1IDcgOC40NSA3IDl2MTBjMCAxLjEuOSAyIDIgMmg5Yy44MyAwIDEuNTQtLjUgMS44NC0xLjIybDMuMDItNy4wNWMuMDktLjIzLjE0LS40Ny4xNC0uNzN2LTJ6XCIvPjwvc3ZnPlxuICAgICAgPC9idXR0b24-YDtcbiAgfVxufVxuXG5jdXN0b21FbGVtZW50cy5kZWZpbmUoJ3JhdGluZy1lbGVtZW50JywgUmF0aW5nRWxlbWVudCk7In0seyJuYW1lIjoidGh1bWJfZG93bi5zdmciLCJjb250ZW50IjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgaGVpZ2h0PVwiMjRcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgd2lkdGg9XCIyNFwiPjxwYXRoIGQ9XCJNMTUgM0g2Yy0uODMgMC0xLjU0LjUtMS44NCAxLjIybC0zLjAyIDcuMDVjLS4wOS4yMy0uMTQuNDctLjE0LjczdjJjMCAxLjEuOSAyIDIgMmg2LjMxbC0uOTUgNC41Ny0uMDMuMzJjMCAuNDEuMTcuNzkuNDQgMS4wNkw5LjgzIDIzbDYuNTktNi41OWMuMzYtLjM2LjU4LS44Ni41OC0xLjQxVjVjMC0xLjEtLjktMi0yLTJ6bTQgMHYxMmg0VjNoLTR6XCIvPjwvc3ZnPiJ9LHsibmFtZSI6InRodW1iX3VwLnN2ZyIsImNvbnRlbnQiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xIDIxaDRWOUgxdjEyem0yMi0xMWMwLTEuMS0uOS0yLTItMmgtNi4zMWwuOTUtNC41Ny4wMy0uMzJjMC0uNDEtLjE3LS43OS0uNDQtMS4wNkwxNC4xNyAxIDcuNTkgNy41OUM3LjIyIDcuOTUgNyA4LjQ1IDcgOXYxMGMwIDEuMS45IDIgMiAyaDljLjgzIDAgMS41NC0uNSAxLjg0LTEuMjJsMy4wMi03LjA1Yy4wOS0uMjMuMTQtLjQ3LjE0LS43M3YtMnpcIi8-PC9zdmc-In1d"
+            target="_blank"
+            >here</a
+          >.
+        </p>
+        <h2 is-upgraded="" id="whats-next" data-text="What's next?">
+          <strong>What's next?</strong>
+        </h2>
+        <p>Check out some of the other codelabs!</p>
+        <ul>
+          <li>
+            <a
+              href="https://codelabs.developers.google.com/codelabs/lit-2-for-react-devs"
+              target="_blank"
+              >Lit for React Developers</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://codelabs.developers.google.com/codelabs/lit-brick-viewer"
+              target="_blank"
+              >Build a Brick Viewer with lit-element</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://codelabs.developers.google.com/codelabs/lit-story-viewer"
+              target="_blank"
+              >Build a Stories Component with lit-element</a
+            >
+          </li>
+        </ul>
+        <h2 is-upgraded="" id="further-reading" data-text="Further reading">
+          <strong>Further reading</strong>
+        </h2>
+        <ul>
+          <li>
+            <a href="https://lit.dev/tutorial/" target="_blank"
+              >Lit interactive tutorial</a
+            >
+          </li>
+          <li>
+            <a href="https://lit.dev/docs/" target="_blank">The Lit Docs</a>
+          </li>
+          <li>
+            <a href="https://open-wc.org/" target="_blank"
+              >Open Web Components</a
+            >
+            - A community run guidance and tooling community
+          </li>
+          <li>
+            <a href="https://webcomponents.dev/" target="_blank"
+              >WebComponents.dev</a
+            >
+            - Create a Web Component in all known frameworks
+          </li>
+        </ul>
+        <h2 is-upgraded="" id="community" data-text="Community">
+          <strong>Community</strong>
+        </h2>
+        <ul>
+          <li>
+            <a href="https://lit.dev/slack-invite" target="_blank"
+              >Lit and Friends Slack</a
+            >
+            - The largest Web Components community
+          </li>
+          <li>
+            <a href="https://twitter.com/buildWithLit" target="_blank"
+              >@buildWithLit on Twitter</a
+            >
+            - The Twitter account of the team that made Lit
+          </li>
+          <li>
+            <a href="https://twitter.com/WebComponentsSF" target="_blank"
+              >Web Components SF</a
+            >
+            - A Web Components meetup for San Francisco
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

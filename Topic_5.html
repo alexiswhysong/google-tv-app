@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/tutorialPage.css">
+    <title>Topic 5</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title">
+          <a href="#4">5. HTML Templates</a>
+        </h2>
+
+        <h2 is-upgraded="" id="why-templates" data-text="Why Templates">
+          Why Templates
+        </h2>
+        <p>
+          Using <code translate="no" dir="ltr">innerHTML</code> and template
+          literal strings with no sanitization may cause security issues with
+          script injection. Methods in the past have included using
+          <code translate="no" dir="ltr">DocumentFragment</code>s, but these
+          also come with other issues such as images loading and scripts running
+          when the templates are defined as well as introducing obstacles for
+          reusability. This is where the
+          <code translate="no" dir="ltr">&lt;template&gt;</code> element comes
+          in; templates provide inert DOM, a highly performant method to clone
+          nodes, and reusable templating.
+        </p>
+        <h2 is-upgraded="" id="using-templates" data-text="Using Templates">
+          <strong>Using Templates</strong>
+        </h2>
+        <p>Next, transition the component to use HTML Templates:</p>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiA8aGVhZD5cbiAgIDxzY3JpcHQgc3JjPVwiLi9pbmRleC5qc1wiIHR5cGU9XCJtb2R1bGVcIj48L3NjcmlwdD5cbiAgIDxzdHlsZT5cbiAgICAgc3BhbiB7XG4gICAgICAgYm9yZGVyOiAxcHggc29saWQgcmVkO1xuICAgICB9XG4gICA8L3N0eWxlPlxuIDwvaGVhZD5cbiA8Ym9keT5cbiAgIDxyYXRpbmctZWxlbWVudD5cbiAgICAgPGRpdj5cbiAgICAgICBUaGlzIGlzIHRoZSBsaWdodCBET00hXG4gICAgIDwvZGl2PlxuICAgPC9yYXRpbmctZWxlbWVudD5cbiA8L2JvZHk-XG48L2h0bWw-In0seyJuYW1lIjoiaW5kZXguanMiLCJjb250ZW50IjoiY2xhc3MgUmF0aW5nRWxlbWVudCBleHRlbmRzIEhUTUxFbGVtZW50IHtcbiBjb25zdHJ1Y3RvcigpIHtcbiAgIHN1cGVyKCk7XG4gICB0aGlzLnJhdGluZyA9IDA7XG4gfVxuIGNvbm5lY3RlZENhbGxiYWNrKCkge1xuICAgY29uc3Qgc2hhZG93Um9vdCA9IHRoaXMuYXR0YWNoU2hhZG93KHttb2RlOiAnb3Blbid9KTtcblxuICAgc2hhZG93Um9vdC5pbm5lckhUTUwgPSBgXG4gICAgIDxzdHlsZT5cbiAgICAgICA6aG9zdCB7XG4gICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgfVxuICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICB9XG4gICAgIDwvc3R5bGU-XG4gICAgIDxidXR0b24gY2xhc3M9XCJ0aHVtYl9kb3duXCIgPlxuICAgICAgIDxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTE1IDNINmMtLjgzIDAtMS41NC41LTEuODQgMS4yMmwtMy4wMiA3LjA1Yy0uMDkuMjMtLjE0LjQ3LS4xNC43M3YyYzAgMS4xLjkgMiAyIDJoNi4zMWwtLjk1IDQuNTctLjAzLjMyYzAgLjQxLjE3Ljc5LjQ0IDEuMDZMOS44MyAyM2w2LjU5LTYuNTljLjM2LS4zNi41OC0uODYuNTgtMS40MVY1YzAtMS4xLS45LTItMi0yem00IDB2MTJoNFYzaC00elwiLz48L3N2Zz5cbiAgICAgPC9idXR0b24-XG4gICAgIDxzcGFuIGNsYXNzPVwicmF0aW5nXCI-JHt0aGlzLnJhdGluZ308L3NwYW4-XG4gICAgIDxidXR0b24gY2xhc3M9XCJ0aHVtYl91cFwiPlxuICAgICAgIDxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTEgMjFoNFY5SDF2MTJ6bTIyLTExYzAtMS4xLS45LTItMi0yaC02LjMxbC45NS00LjU3LjAzLS4zMmMwLS40MS0uMTctLjc5LS40NC0xLjA2TDE0LjE3IDEgNy41OSA3LjU5QzcuMjIgNy45NSA3IDguNDUgNyA5djEwYzAgMS4xLjkgMiAyIDJoOWMuODMgMCAxLjU0LS41IDEuODQtMS4yMmwzLjAyLTcuMDVjLjA5LS4yMy4xNC0uNDcuMTQtLjczdi0yelwiLz48L3N2Zz5cbiAgICAgPC9idXR0b24-XG4gICBgO1xuIH1cbn1cblxuY3VzdG9tRWxlbWVudHMuZGVmaW5lKCdyYXRpbmctZWxlbWVudCcsIFJhdGluZ0VsZW1lbnQpOyJ9LHsibmFtZSI6InRodW1iX2Rvd24uc3ZnIiwiY29udGVudCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTE1IDNINmMtLjgzIDAtMS41NC41LTEuODQgMS4yMmwtMy4wMiA3LjA1Yy0uMDkuMjMtLjE0LjQ3LS4xNC43M3YyYzAgMS4xLjkgMiAyIDJoNi4zMWwtLjk1IDQuNTctLjAzLjMyYzAgLjQxLjE3Ljc5LjQ0IDEuMDZMOS44MyAyM2w2LjU5LTYuNTljLjM2LS4zNi41OC0uODYuNTgtMS40MVY1YzAtMS4xLS45LTItMi0yem00IDB2MTJoNFYzaC00elwiLz48L3N2Zz4ifSx7Im5hbWUiOiJ0aHVtYl91cC5zdmciLCJjb250ZW50IjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgaGVpZ2h0PVwiMjRcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgd2lkdGg9XCIyNFwiPjxwYXRoIGQ9XCJNMSAyMWg0VjlIMXYxMnptMjItMTFjMC0xLjEtLjktMi0yLTJoLTYuMzFsLjk1LTQuNTcuMDMtLjMyYzAtLjQxLS4xNy0uNzktLjQ0LTEuMDZMMTQuMTcgMSA3LjU5IDcuNTlDNy4yMiA3Ljk1IDcgOC40NSA3IDl2MTBjMCAxLjEuOSAyIDIgMmg5Yy44MyAwIDEuNTQtLjUgMS44NC0xLjIybDMuMDItNy4wNWMuMDktLjIzLjE0LS40Ny4xNC0uNzN2LTJ6XCIvPjwvc3ZnPiJ9XQ"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <h3 is-upgraded="" id="index.html_3" data-text="index.html">
+          index.<wbr />html
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-html" dir="ltr"><span class="tag"><span class="tag">&lt;body&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;template</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">id</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"rating-element-template"</span></span><span class="tag"><span class="tag">&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;style&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln">host </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">display</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> inline-flex</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">align-items</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> center</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;button </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">background</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> transparent</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">border</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> none</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">cursor</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> pointer</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;/style&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;button</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">class</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"thumb_down"</span></span><span class="pln"><span class="pln"> </span></span><span class="tag"><span class="tag">&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;svg</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">xmlns</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"http://www.w3.org/2000/svg"</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">height</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"24"</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">viewbox</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"0 0 24 24"</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">width</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"24"</span></span><span class="tag"><span class="tag">&gt;&lt;path</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">d</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"</span></span><span class="tag"><span class="tag">/&gt;&lt;/svg&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;/button&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;span</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">class</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"rating"</span></span><span class="tag"><span class="tag">&gt;&lt;/span&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;button</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">class</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"thumb_up"</span></span><span class="tag"><span class="tag">&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;svg</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">xmlns</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"http://www.w3.org/2000/svg"</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">height</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"24"</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">viewbox</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"0 0 24 24"</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">width</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"24"</span></span><span class="tag"><span class="tag">&gt;&lt;path</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">d</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"</span></span><span class="tag"><span class="tag">/&gt;&lt;/svg&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;/button&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;/template&gt;</span></span><span class="pln"><span class="pln"><br><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;rating-element&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;div&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp;This is the light DOM!<br>&nbsp; &nbsp;</span></span><span class="tag"><span class="tag">&lt;/div&gt;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="tag"><span class="tag">&lt;/rating-element&gt;</span></span><span class="pln"><span class="pln"><br></span></span><span class="tag"><span class="tag">&lt;/body&gt;</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Here you moved the DOM content into a template tag in the main
+          document's DOM. Now refactor the custom element definition:
+        </p>
+        <h3 is-upgraded="" id="index.js_3" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">class</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">extends</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">HTMLElement</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;constructor</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">super</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp;connectedCallback</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> shadowRoot </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">attachShadow</span></span><span class="pun"><span class="pun">({</span></span><span class="pln"><span class="pln">mode</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'open'</span></span><span class="pun"><span class="pun">});</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> templateContent </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> document</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">getElementById</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'rating-element-template'</span></span><span class="pun"><span class="pun">).</span></span><span class="pln"><span class="pln">content</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> clonedContent </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> templateContent</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">cloneNode</span></span><span class="pun"><span class="pun">(</span></span><span class="kwd"><span class="kwd">true</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">appendChild</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">clonedContent</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">querySelector</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'.rating'</span></span><span class="pun"><span class="pun">).</span></span><span class="pln"><span class="pln">innerText </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>customElements</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">define</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'rating-element'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">RatingElement</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          To use this template element, you query the template, get it's
+          contents, and clone those nodes with
+          <code translate="no" dir="ltr">templateContent.cloneNode</code> where
+          the <code translate="no" dir="ltr">true</code> argument performs a
+          deep clone. You then initialize the dom with the data.
+        </p>
+        <p>
+          Congratulations, you now have a Web Component! Unfortunately it does
+          not do anything yet, so next, add some functionality.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/tutorialPage.css">
+    <title>Topic 6</title>
+  </head>
+
+  <body>
+    <div id="content-top">
+      <div class="inner">
+        <h2 is-upgraded="" class="step-title">
+          <a href="#5">6. Adding Functionality</a>
+        </h2>
+
+        <h2 is-upgraded="" id="property-bindings" data-text="Property Bindings">
+          <strong>Property Bindings</strong>
+        </h2>
+        <p>
+          Currently, the only way to set the rating on the rating-element is to
+          construct the element, set the
+          <code translate="no" dir="ltr">rating</code> property on the object,
+          and then put it on the page. Unfortunately, this is not how native
+          HTML elements tend to work. Native HTML elements tend to update with
+          both property and attribute changes.
+        </p>
+        <p>
+          Make the custom element update the view when the
+          <code translate="no" dir="ltr">rating</code> property changes by
+          adding the following lines:
+        </p>
+        <p>
+          <a
+            href="https://lit.dev/playground/#project=W3sibmFtZSI6ImluZGV4Lmh0bWwiLCJjb250ZW50IjoiPCFET0NUWVBFIGh0bWw-XG48aHRtbD5cbiA8aGVhZD5cbiAgIDxzY3JpcHQgc3JjPVwiLi9pbmRleC5qc1wiIHR5cGU9XCJtb2R1bGVcIj48L3NjcmlwdD5cbiAgIDxzdHlsZT5cbiAgICAgc3BhbiB7XG4gICAgICAgYm9yZGVyOiAxcHggc29saWQgcmVkO1xuICAgICB9XG4gICA8L3N0eWxlPlxuIDwvaGVhZD5cbiA8Ym9keT5cbiAgIDx0ZW1wbGF0ZSBpZD1cInJhdGluZy1lbGVtZW50LXRlbXBsYXRlXCI-XG4gICAgIDxzdHlsZT5cbiAgICAgICA6aG9zdCB7XG4gICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgfVxuICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDtcbiAgICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICB9XG4gICAgIDwvc3R5bGU-XG4gICAgIDxidXR0b24gY2xhc3M9XCJ0aHVtYl9kb3duXCIgPlxuICAgICAgIDxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld2JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTE1IDNINmMtLjgzIDAtMS41NC41LTEuODQgMS4yMmwtMy4wMiA3LjA1Yy0uMDkuMjMtLjE0LjQ3LS4xNC43M3YyYzAgMS4xLjkgMiAyIDJoNi4zMWwtLjk1IDQuNTctLjAzLjMyYzAgLjQxLjE3Ljc5LjQ0IDEuMDZMOS44MyAyM2w2LjU5LTYuNTljLjM2LS4zNi41OC0uODYuNTgtMS40MVY1YzAtMS4xLS45LTItMi0yem00IDB2MTJoNFYzaC00elwiLz48L3N2Zz5cbiAgICAgPC9idXR0b24-XG4gICAgIDxzcGFuIGNsYXNzPVwicmF0aW5nXCI-PC9zcGFuPlxuICAgICA8YnV0dG9uIGNsYXNzPVwidGh1bWJfdXBcIj5cbiAgICAgICA8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdib3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xIDIxaDRWOUgxdjEyem0yMi0xMWMwLTEuMS0uOS0yLTItMmgtNi4zMWwuOTUtNC41Ny4wMy0uMzJjMC0uNDEtLjE3LS43OS0uNDQtMS4wNkwxNC4xNyAxIDcuNTkgNy41OUM3LjIyIDcuOTUgNyA4LjQ1IDcgOXYxMGMwIDEuMS45IDIgMiAyaDljLjgzIDAgMS41NC0uNSAxLjg0LTEuMjJsMy4wMi03LjA1Yy4wOS0uMjMuMTQtLjQ3LjE0LS43M3YtMnpcIi8-PC9zdmc-XG4gICAgIDwvYnV0dG9uPlxuICAgPC90ZW1wbGF0ZT5cblxuICAgPHJhdGluZy1lbGVtZW50PlxuICAgICA8ZGl2PlxuICAgICAgIFRoaXMgaXMgdGhlIGxpZ2h0IERPTSFcbiAgICAgPC9kaXY-XG4gICA8L3JhdGluZy1lbGVtZW50PlxuIDwvYm9keT5cbjwvaHRtbD4ifSx7Im5hbWUiOiJpbmRleC5qcyIsImNvbnRlbnQiOiJjbGFzcyBSYXRpbmdFbGVtZW50IGV4dGVuZHMgSFRNTEVsZW1lbnQge1xuIGNvbnN0cnVjdG9yKCkge1xuICAgc3VwZXIoKTtcbiAgIHRoaXMucmF0aW5nID0gMDtcbiB9XG4gY29ubmVjdGVkQ2FsbGJhY2soKSB7XG4gICBjb25zdCBzaGFkb3dSb290ID0gdGhpcy5hdHRhY2hTaGFkb3coe21vZGU6ICdvcGVuJ30pO1xuICAgY29uc3QgdGVtcGxhdGVDb250ZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3JhdGluZy1lbGVtZW50LXRlbXBsYXRlJykuY29udGVudDtcbiAgIGNvbnN0IGNsb25lZENvbnRlbnQgPSB0ZW1wbGF0ZUNvbnRlbnQuY2xvbmVOb2RlKHRydWUpO1xuICAgc2hhZG93Um9vdC5hcHBlbmRDaGlsZChjbG9uZWRDb250ZW50KTtcblxuICAgdGhpcy5zaGFkb3dSb290LnF1ZXJ5U2VsZWN0b3IoJy5yYXRpbmcnKS5pbm5lclRleHQgPSB0aGlzLnJhdGluZztcbiB9XG59XG5cbmN1c3RvbUVsZW1lbnRzLmRlZmluZSgncmF0aW5nLWVsZW1lbnQnLCBSYXRpbmdFbGVtZW50KTsifSx7Im5hbWUiOiJ0aHVtYl9kb3duLnN2ZyIsImNvbnRlbnQiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBoZWlnaHQ9XCIyNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiB3aWR0aD1cIjI0XCI-PHBhdGggZD1cIk0xNSAzSDZjLS44MyAwLTEuNTQuNS0xLjg0IDEuMjJsLTMuMDIgNy4wNWMtLjA5LjIzLS4xNC40Ny0uMTQuNzN2MmMwIDEuMS45IDIgMiAyaDYuMzFsLS45NSA0LjU3LS4wMy4zMmMwIC40MS4xNy43OS40NCAxLjA2TDkuODMgMjNsNi41OS02LjU5Yy4zNi0uMzYuNTgtLjg2LjU4LTEuNDFWNWMwLTEuMS0uOS0yLTItMnptNCAwdjEyaDRWM2gtNHpcIi8-PC9zdmc-In0seyJuYW1lIjoidGh1bWJfdXAuc3ZnIiwiY29udGVudCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIGhlaWdodD1cIjI0XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIHdpZHRoPVwiMjRcIj48cGF0aCBkPVwiTTEgMjFoNFY5SDF2MTJ6bTIyLTExYzAtMS4xLS45LTItMi0yaC02LjMxbC45NS00LjU3LjAzLS4zMmMwLS40MS0uMTctLjc5LS40NC0xLjA2TDE0LjE3IDEgNy41OSA3LjU5QzcuMjIgNy45NSA3IDguNDUgNyA5djEwYzAgMS4xLjkgMiAyIDJoOWMuODMgMCAxLjU0LS41IDEuODQtMS4yMmwzLjAyLTcuMDVjLjA5LS4yMy4xNC0uNDcuMTQtLjczdi0yelwiLz48L3N2Zz4ifV0"
+            target="_blank"
+            ><button class="button button-primary">Code Checkpoint</button></a
+          >
+        </p>
+        <h3 is-upgraded="" id="index.js_4" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy=""
+          ><div
+            class="devsite-code-buttons-container"
+            role="group"
+            aria-label="Action buttons"
+          >
+            <button
+              type="button"
+              class="gc-analytics-event material-icons devsite-explain-code"
+              data-category="Site-Wide Custom Events"
+              data-label="Explain Code with AI"
+              track-type="exampleCode"
+              track-name="explainCodeButton"
+              aria-label="Explain code with AI"
+              data-title="Explain code with AI"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g>
+                  <path
+                    d="M16 22L13 19L16 16L19 19L16 22ZM8 19L2 13L8 7L14 13L8 19ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z"
+                    fill="#444746"
+                  ></path>
+                </g>
+              </svg></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-dark devsite-toggle-dark"
+              data-category="Site-Wide Custom Events"
+              data-label="Dark Code Toggle"
+              track-type="exampleCode"
+              track-name="darkCodeToggle"
+              aria-label="Dark code theme"
+              data-title="Dark code theme"
+            ></button
+            ><button
+              type="button"
+              class="gc-analytics-event material-icons devsite-icon-code-light devsite-toggle-light"
+              data-category="Site-Wide Custom Events"
+              data-label="Light Code Toggle"
+              track-type="exampleCode"
+              track-name="lightCodeToggle"
+              aria-label="Light code theme"
+              data-title="Light code theme"
+            ></button>
+          </div>
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="pln"><span class="pln">constructor</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">super</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="kwd"><span class="kwd">set</span></span><span class="pln"><span class="pln"> rating</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">value</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> value</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(!</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>&nbsp; </span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> ratingEl </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">querySelector</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'.rating'</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">ratingEl</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; ratingEl</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">innerText </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="kwd"><span class="kwd">get</span></span><span class="pln"><span class="pln"> rating</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          You add a setter and getter for the rating property, and then you
+          update the rating element's text if it's available. This means if you
+          were to set the rating property on the element, the view will update;
+          give it a quick test in your Dev Tools console!
+        </p>
+        <h2
+          is-upgraded=""
+          id="attribute-bindings"
+          data-text="Attribute Bindings"
+        >
+          <strong>Attribute Bindings</strong>
+        </h2>
+        <p>
+          Now, update the view when the attribute changes; this is similar to an
+          input updating its view when you set
+          <code translate="no" dir="ltr">&lt;input value="newValue"&gt;</code>.
+          Luckily, the Web Component lifecycle includes the
+          <code translate="no" dir="ltr">attributeChangedCallback</code>. Update
+          the rating by adding the following lines:
+        </p>
+        <h3 is-upgraded="" id="index.js_5" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">static</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">get</span></span><span class="pln"><span class="pln"> observedAttributes</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">[</span></span><span class="str"><span class="str">'rating'</span></span><span class="pun"><span class="pun">];</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>attributeChangedCallback</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">attributeName</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> oldValue</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> newValue</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">attributeName </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'rating'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> newRating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Number</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> newRating</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          In order for the
+          <code translate="no" dir="ltr">attributeChangedCallback</code> to
+          trigger, you must set a static getter for
+          <code translate="no" dir="ltr"
+            >RatingElement.observedAttributes which defines the attributes to be
+            observed for changes</code
+          >. You then set the rating declaratively in the DOM. Give it a try:
+        </p>
+        <h3 is-upgraded="" id="index.html_4" data-text="index.html">
+          <strong>index.<wbr />html</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code dir="ltr"><span class="tag"><span class="tag">&lt;rating-element</span></span><span class="pln"><span class="pln"> </span></span><span class="atn"><span class="atn">rating</span></span><span class="pun"><span class="pun">=</span></span><span class="atv"><span class="atv">"5"</span></span><span class="tag"><span class="tag">&gt;&lt;/rating-element&gt;</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>The rating should now be updating declaratively!</p>
+        <h2
+          is-upgraded=""
+          id="button-functionality"
+          data-text="Button Functionality"
+        >
+          Button Functionality
+        </h2>
+        <p>
+          Now all that's missing is the button functionality. The behavior of
+          this component should allow the user to provide a single up or down
+          vote rating and give visual feedback to the user. You can implement
+          this with some event listeners and a reflecting property, but first
+          update the styles to give visual feedback by appending the following
+          lines:
+        </p>
+        <h3 is-upgraded="" id="index.html_5" data-text="index.html">
+          <strong>index.<wbr />html</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-html" dir="ltr"><span class="tag"><span class="tag">&lt;style&gt;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">...</span></span><span class="pln"><span class="pln"><br><br>&nbsp;</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln">host</span></span><span class="pun"><span class="pun">([</span></span><span class="pln"><span class="pln">vote</span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln">up</span></span><span class="pun"><span class="pun">])</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">thumb_up </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">fill</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> green</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln">host</span></span><span class="pun"><span class="pun">([</span></span><span class="pln"><span class="pln">vote</span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln">down</span></span><span class="pun"><span class="pun">])</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">thumb_down </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp;</span></span><span class="kwd"><span class="kwd">fill</span></span><span class="pun"><span class="pun">:</span></span><span class="pln"><span class="pln"> red</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="tag"><span class="tag">&lt;/style&gt;</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          In Shadow DOM the <code translate="no" dir="ltr">:host</code> selector
+          refers to the node or custom element that the Shadow Root is attached
+          to. In this case, if the
+          <code translate="no" dir="ltr">vote</code> attribute is
+          <code translate="no" dir="ltr">"up"</code> it will turn the thumb-up
+          button green, but if <code translate="no" dir="ltr">vote</code> is
+          <code translate="no" dir="ltr"
+            >"down", then it will turn the thumb-down button red</code
+          >. Now, implement the logic for this by creating a reflecting property
+          / attribute for <code translate="no" dir="ltr">vote</code> similar to
+          how you implemented <code translate="no" dir="ltr">rating</code>.
+          Start with the property setter and getter:
+        </p>
+        <h3 is-upgraded="" id="index.js_6" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="pln"><span class="pln">constructor</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">super</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">null</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="kwd"><span class="kwd">set</span></span><span class="pln"><span class="pln"> vote</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> oldValue </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> oldValue</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'up'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">oldValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'down'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">+=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">2</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">+=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'down'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">oldValue </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'up'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">-=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">2</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">-=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">1</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> newValue</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">setAttribute</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'vote'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> newValue</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br></span></span><span class="kwd"><span class="kwd">get</span></span><span class="pln"><span class="pln"> vote</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          You initialize the
+          <code translate="no" dir="ltr">_vote</code> instance property with
+          <code translate="no" dir="ltr">null</code> in the
+          <code translate="no" dir="ltr">constructor</code>, and in the setter
+          you check if the new value is different. If so, you adjust the rating
+          accordingly and, importantly, reflect the
+          <code translate="no" dir="ltr">vote</code> attribute back to the host
+          with <code translate="no" dir="ltr">this.setAttribute</code>.
+        </p>
+        <aside class="warning">
+          <p>
+            Note, this is not the most-efficient way of writing this, but it is
+            meant to exemplify how state works on a web component.
+          </p>
+        </aside>
+        <p>Next, set up the attribute binding:</p>
+        <h3 is-upgraded="" id="index.js_7" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="kwd"><span class="kwd">static</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">get</span></span><span class="pln"><span class="pln"> observedAttributes</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">return</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">[</span></span><span class="str"><span class="str">'rating'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'vote'</span></span><span class="pun"><span class="pun">];</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>attributeChangedCallback</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">attributeName</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> oldValue</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> newValue</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">attributeName </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'rating'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">const</span></span><span class="pln"><span class="pln"> newRating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="typ"><span class="typ">Number</span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">newValue</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> newRating</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">else</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">if</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">(</span></span><span class="pln"><span class="pln">attributeName </span></span><span class="pun"><span class="pun">===</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'vote'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> newValue</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          Again, this is the same process you went through with the
+          <code translate="no" dir="ltr">rating</code> attribute binding; you
+          add <code translate="no" dir="ltr">vote</code> to the
+          <code translate="no" dir="ltr">observedAttributes</code>, and you set
+          the <code translate="no" dir="ltr">vote</code> property in the
+          <code translate="no" dir="ltr">attributeChangedCallback</code>. And
+          now finally, add some click event listeners to give the buttons
+          functionality!
+        </p>
+        <h3 is-upgraded="" id="index.js_8" data-text="index.js">
+          <strong>index.<wbr />js</strong>
+        </h3>
+        <devsite-code data-copy-event-label="" no-copy="">
+          <pre
+            class=""
+            translate="no"
+            dir="ltr"
+            is-upgraded=""
+          ><code class="language-js" dir="ltr"><span class="pln"><span class="pln">constructor</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">super</span></span><span class="pun"><span class="pun">();</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_rating </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="lit"><span class="lit">0</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">null</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_boundOnUpClick </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_onUpClick</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">bind</span></span><span class="pun"><span class="pun">(</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp;</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_boundOnDownClick </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_onDownClick</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">bind</span></span><span class="pun"><span class="pun">(</span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>connectedCallback</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="pun"><span class="pun">...</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">querySelector</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'.thumb_up'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">addEventListener</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'click'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_boundOnUpClick</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">querySelector</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'.thumb_down'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">addEventListener</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'click'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_boundOnDownClick</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>disconnectedCallback</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">querySelector</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'.thumb_up'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">removeEventListener</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'click'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_boundOnUpClick</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">shadowRoot</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">querySelector</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'.thumb_down'</span></span><span class="pun"><span class="pun">)</span></span><span class="pln"><span class="pln"><br>&nbsp; &nbsp; </span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">removeEventListener</span></span><span class="pun"><span class="pun">(</span></span><span class="str"><span class="str">'click'</span></span><span class="pun"><span class="pun">,</span></span><span class="pln"><span class="pln"> </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">_boundOnDownClick</span></span><span class="pun"><span class="pun">);</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>_onUpClick</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'up'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br><br>_onDownClick</span></span><span class="pun"><span class="pun">()</span></span><span class="pln"><span class="pln"> </span></span><span class="pun"><span class="pun">{</span></span><span class="pln"><span class="pln"><br>&nbsp; </span></span><span class="kwd"><span class="kwd">this</span></span><span class="pun"><span class="pun">.</span></span><span class="pln"><span class="pln">vote </span></span><span class="pun"><span class="pun">=</span></span><span class="pln"><span class="pln"> </span></span><span class="str"><span class="str">'down'</span></span><span class="pun"><span class="pun">;</span></span><span class="pln"><span class="pln"><br></span></span><span class="pun"><span class="pun">}</span></span><span class="pln"><span class="pln"><br></span></span></code></pre>
+        </devsite-code>
+        <p>
+          In the <code translate="no" dir="ltr">constructor</code> you bind some
+          click listeners to the element and keep the references around. In the
+          <code translate="no" dir="ltr">connectedCallback</code> you listen for
+          click events on the buttons. In the
+          <code translate="no" dir="ltr">disconnectedCallback</code> you clean
+          up these listeners, and on the click listeners themselves, you set
+          <code translate="no" dir="ltr">vote</code> appropriately.
+        </p>
+        <p>
+          Congratulations, you now have a fully-featured Web Component; try
+          clicking on some buttons! The issue now is that my JS file is now
+          reaching 96 lines, my HTML file 43 lines, and the code is quite
+          verbose and imperative for such a simple component. This is where
+          Google's Lit project comes in!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
